@@ -1,0 +1,4 @@
+"0",""
+"0","parts_use = consolidated_model_df |> count(body_part) |> filter(n > 5) |> pull(body_part)"
+"0","diag_use =  consolidated_model_df |> count(diagnosis) |> filter(n > 5) |> pull(diagnosis)"
+"0","model_cols = select(consolidated_model_df,-primary_mechanism) |> names()"

@@ -1,0 +1,4 @@
+"0","to_comb_cardio_syn = c(""Cardiovascular event"", ""Other syncope or dyspnea"")"
+"0","to_comb_hit_obj = c(""Hit object"",""Hit player"",""Hit with ball"",""Hit with racquet/paddle"")"
+"0",""
+"0","neiss_df_fct_d = read_rds(""clean_data/clean_full.RDS"")"

@@ -1,0 +1,8 @@
+"0","narrative_tbl = select(model_df_raw, cpsc_case_number, narrative ) |>"
+"0","  bind_rows(select(new_df_prepro, cpsc_case_number, narrative )) |>"
+"0","  count(cpsc_case_number, narrative) |>"
+"0","  select(-n) "
+"0",""
+"0","narrative_tbl |>"
+"0","  write_csv(""data_to_model/narrative_tbl_all.csv"")"
+"0",""

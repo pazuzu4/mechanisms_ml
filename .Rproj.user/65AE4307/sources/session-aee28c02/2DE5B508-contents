@@ -1,0 +1,117 @@
+---
+title: "Mechanism Model"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(janitor)
+library(caret)
+library(tidymodels)
+```
+
+Read in clean data
+```{r}
+model_df_final_detect = read_rds("data_to_model/model_df_final_detect.rds")
+model_df_final_count = read_rds("data_to_model/model_df_final_count.rds")
+new_data_to_model_detect = read_rds("data_to_model/new_data_to_model_detect.rds")
+new_data_to_model_count = read_rds("data_to_model/new_data_to_model_count.rds")
+```
+
+
+```{r}
+#new_data_to_model_detect 
+```
+
+
+Do train and test split on the old data 
+Set up resampling (10 fold cross validation)
+Drop unused columns
+Stratify the random sample by the outcome
+
+```{r}
+cols_not_mod = c("cpsc_case_number","psu","stratum","weight","treatment_date")
+    
+init_split <- initial_split(model_df_final_detect, prop = .75, strata = "primary_mechanism")
+
+train_df_detect <- training(init_split)
+test_df_detect <- testing(init_split)
+
+train_df_count <- model_df_final_count[init_split$in_id,]
+test_df_count <- model_df_final_count[-init_split$in_id,]
+
+trctrl <- trainControl(method = "cv", number = 10, verboseIter = T)
+select(train_df_detect, -all_of(cols_not_mod) )
+select(train_df_count, -all_of(cols_not_mod) )
+```
+
+
+Run the model and review confusion matrix
+```{r}
+lin_mod_detect <- train(primary_mechanism~., data = select(train_df_detect, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl)
+lin_mod_count <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl)
+
+lin_preds_detect <- predict(lin_mod_detect, test_df_detect)
+lin_preds_count <- predict(lin_mod_count, test_df_count)
+
+confusionMatrix(lin_preds_detect, test_df_detect$primary_mechanism)
+confusionMatrix(lin_preds_count, test_df_count$primary_mechanism)
+
+```
+
+
+Review elbow charts
+```{r}
+plot(lin_mod_detect)
+plot(lin_mod_count)
+```
+
+
+Apply model predictions on new 2020-2022 data
+```{r}
+new_lin_preds_detect <- predict(lin_mod_detect, new_data_to_model_detect)
+new_lin_preds_count <- predict(lin_mod_count, new_data_to_model_count)
+
+table(new_lin_preds_detect)
+table(new_lin_preds_count)
+
+indxs = which(new_lin_preds_detect != new_lin_preds_count)
+
+new_data_to_model_detect_wprerds = new_data_to_model_detect |> mutate(detect_pred = new_lin_preds_detect , count_pred = new_lin_preds_count)
+
+narr_tbl = read_csv("data_to_model/narrative_tbl_all.csv")
+
+new_data_to_model_detect_wprerds[indxs,] |> left_join(narr_tbl) |> write_csv("disagree_rows.csv")
+```
+
+
+Accounting for survey weights
+```{r}
+lin_mod_detect_wt <- train(primary_mechanism~., data = select(train_df_detect, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl, weights = train_df_detect$weight)
+lin_mod_count_wt <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl, weights = train_df_detect$weight)
+
+lin_preds_detect_wt <- predict(lin_mod_detect_wt, test_df_detect)
+lin_preds_count_wt <- predict(lin_mod_count_wt, test_df_count)
+
+confusionMatrix(lin_preds_detect_wt, test_df_detect$primary_mechanism)
+confusionMatrix(lin_preds_count_wt, test_df_count$primary_mechanism)
+```
+
+
+Review elbow charts by model type
+```{r}
+plot(lin_mod_detect)
+plot(lin_mod_detect_wt)
+plot(lin_mod_count)
+plot(lin_mod_count_wt)
+```
+
+
+Variable Importance values
+```{r}
+varImp(lin_mod_detect)
+varImp(lin_mod_detect_wt)
+```
+
+

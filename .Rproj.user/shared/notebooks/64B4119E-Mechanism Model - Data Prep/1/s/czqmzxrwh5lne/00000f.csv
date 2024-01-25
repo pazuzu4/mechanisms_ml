@@ -1,0 +1,19 @@
+"0","clean_data <- read_rds(""C:/Users/Jake/Desktop/Exercise_Equipment/clean_data/clean_neiss_df_2013-2022.RDS"") |> mutate(age = as.numeric(age_in_years) ) |>"
+"0","  filter(Treatment_Date >= ymd(""2020-01-01"") & Disposition != ""FATALITY INCL. DOA, DIED IN ER"")"
+"2","Warning: [38;5;254mThere was 1 warning in `mutate()`.[39m
+[38;5;254m[36mℹ[38;5;254m In argument: `age = as.numeric(age_in_years)`.[39m
+Caused by warning:
+[33m![39m NAs introduced by coercion"
+"0","tennis_dat = clean_data  |>"
+"0","  filter(Product_1 == ""TENNIS (ACTIVITY, APPAREL OR EQUIPMENT)"" | Product_2 == ""TENNIS (ACTIVITY, APPAREL OR EQUIPMENT)"" | Product_3 == ""TENNIS (ACTIVITY, APPAREL OR EQUIPMENT)"") |> "
+"0","  filter(age >= 60) |> mutate(id = ""tennis"")"
+"0",""
+"0","pball_words = ""pickleball|pickle ball|pickelball|pickel ball"""
+"0",""
+"0","pball_dat = clean_data  |>"
+"0","  filter(str_detect(string = tolower(Narrative), pattern = pball_words  )) |>  "
+"0","  mutate(id = ""pickleball"")"
+"0",""
+"0","new_data_clean = tennis_dat |>"
+"0","  bind_rows(pball_dat) |> janitor::clean_names() |> mutate(age = as.integer(age)) "
+"0",""
