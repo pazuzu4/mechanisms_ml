@@ -1,8 +1,0 @@
-"0","model_df_raw = preprocess_neiss(consolidated_model_df, top_parts = parts_use, top_diags = diag_use, cols_to_use = model_cols )"
-"0",""
-"0","new_df_prepro = preprocess_neiss(new_data_clean, top_parts = parts_use, top_diags = diag_use, cols_to_use = model_cols, is_new = TRUE )"
-"0",""
-"0","model_df_final_detect = model_df_raw |> get_keywords()"
-"0","model_df_final_count = model_df_raw |> get_keywords(word_funct = str_count)"
-"0","new_data_to_model_detect = new_df_prepro |> get_keywords()"
-"0","new_data_to_model_count = new_df_prepro |> get_keywords(word_funct = str_count)"
