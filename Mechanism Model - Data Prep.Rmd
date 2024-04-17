@@ -166,7 +166,11 @@ Use custom functions to preprocess both new and old data
 model_df_raw = preprocess_neiss(consolidated_model_df, top_parts = parts_use, top_diags = diag_use, cols_to_use = model_cols )
 
 new_df_prepro = preprocess_neiss(new_data_clean, top_parts = parts_use, top_diags = diag_use, cols_to_use = model_cols, is_new = TRUE )
+```
 
+
+
+```{r}
 model_df_final_detect = model_df_raw |> get_keywords()
 model_df_final_count = model_df_raw |> get_keywords(word_funct = str_count)
 new_data_to_model_detect = new_df_prepro |> get_keywords()
@@ -174,19 +178,24 @@ new_data_to_model_count = new_df_prepro |> get_keywords(word_funct = str_count)
 ```
 
 
-Export clean data for modeling
+
 ```{r}
 narrative_tbl = select(model_df_raw, cpsc_case_number, narrative ) |>
   bind_rows(select(new_df_prepro, cpsc_case_number, narrative )) |>
   count(cpsc_case_number, narrative) |>
   select(-n) 
 
-narrative_tbl |>
-  write_csv("data_to_model/narrative_tbl_all.csv")
+
 
 ```
 
+```{r}
+narrative_tbl |>
+  write_csv("data_to_model/narrative_tbl_all.csv")
+```
 
+
+Export clean data for modeling
 ```{r}
 model_df_final_detect |> write_csv("data_to_model/model_df_final_detect.csv")
 model_df_final_count |> write_csv("data_to_model/model_df_final_count.csv")
@@ -200,7 +209,24 @@ new_data_to_model_count |> write_rds("data_to_model/new_data_to_model_count.rds"
 
 ```
 
+Export full and narrative data for Keras text preprocessing
 ```{r}
+model_df_raw |> count(primary_mechanism)
+#model_df_raw  |>  mutate(primary_mechanism = as.numeric(primary_mechanism)) |> count(primary_mechanism)
+
+model_df_raw |> # mutate(primary_mechanism = as.numeric(primary_mechanism)) |> #count(primary_mechanism)
+  write_csv("data_to_model/keras_data/model_df_fullv2.csv")
+
+new_df_prepro |> 
+  write_csv("data_to_model/keras_data/new_model_df_fullv.csv")
+
+model_df_raw |>  #mutate(primary_mechanism = as.numeric(primary_mechanism)) |> 
+  select(cpsc_case_number, narrative, primary_mechanism) |>
+  write_csv("data_to_model/keras_data/model_df_full_narrative.csv")
+
+new_df_prepro |> 
+    select(cpsc_case_number, narrative) |>
+  write_csv("data_to_model/keras_data/new_model_df_full_narrative.csv")
 
 ```
 
