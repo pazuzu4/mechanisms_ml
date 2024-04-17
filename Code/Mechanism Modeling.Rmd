@@ -13,8 +13,8 @@ library(tidymodels)
 
 Read in clean data
 ```{r}
-model_df_final_detect = read_rds("data_to_model/model_df_final_detect.rds")
-model_df_final_count = read_rds("data_to_model/model_df_final_count.rds")
+model_df_final_detect = read_rds("../data_to_model/model_df_final_detect.rds")
+model_df_final_count = read_rds("../data_to_model/model_df_final_count.rds")
 
 ```
 
@@ -64,18 +64,18 @@ lin_mod_count_wt <- train(primary_mechanism~., data = select(train_df_count, -al
 Saving models to an RDS file
 ```{r}
 
-train_df_detect |> write_rds("Model Objects/train_df_detect.RDS")
-test_df_detect |> write_rds("Model Objects/test_df_detect.RDS")
+train_df_detect |> write_rds("../Model Objects/train_df_detect.RDS")
+test_df_detect |> write_rds("../Model Objects/test_df_detect.RDS")
 
-train_df_count |> write_rds("Model Objects/test_df_count.RDS")
-test_df_count |> write_rds("Model Objects/test_df_count.RDS")
+train_df_count |> write_rds("../Model Objects/test_df_count.RDS")
+test_df_count |> write_rds("../Model Objects/test_df_count.RDS")
 
 
-lin_mod_detect |> write_rds("Model Objects/lin_mod_detect.RDS")
-lin_mod_detect_wt |> write_rds("Model Objects/lin_mod_detect_wt.RDS")
+lin_mod_detect |> write_rds("../Model Objects/lin_mod_detect.RDS")
+lin_mod_detect_wt |> write_rds("../Model Objects/lin_mod_detect_wt.RDS")
 
-lin_mod_count |> write_rds("Model Objects/lin_mod_count.RDS")
-lin_mod_count_wt |> write_rds("Model Objects/lin_mod_count_wt.RDS")
+lin_mod_count |> write_rds("../Model Objects/lin_mod_count.RDS")
+lin_mod_count_wt |> write_rds("../Model Objects/lin_mod_count_wt.RDS")
 
 ```
 

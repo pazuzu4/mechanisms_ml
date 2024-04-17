@@ -13,21 +13,21 @@ library(tidymodels)
 
 Read in models & data
 ```{r}
-lin_mod_detect = read_rds("Model Objects/lin_mod_detect.RDS")
-lin_mod_detect_wt = read_rds("Model Objects/lin_mod_detect_wt.RDS")
+lin_mod_detect = read_rds("../Model Objects/lin_mod_detect.RDS")
+lin_mod_detect_wt = read_rds("../Model Objects/lin_mod_detect_wt.RDS")
 
-lin_mod_count = read_rds("Model Objects/lin_mod_count.RDS")
-lin_mod_count_wt = read_rds("Model Objects/lin_mod_count_wt.RDS")
+lin_mod_count = read_rds("../Model Objects/lin_mod_count.RDS")
+lin_mod_count_wt = read_rds("../Model Objects/lin_mod_count_wt.RDS")
 
 
 #train_df_detect = read_rds("Model Objects/train_df_detect.RDS")
-test_df_detect = read_rds("Model Objects/test_df_detect.RDS")
+test_df_detect = read_rds("../Model Objects/test_df_detect.RDS")
 
 #train_df_count = read_rds("Model Objects/test_df_count.RDS")
-test_df_count = read_rds("Model Objects/test_df_count.RDS")
+test_df_count = read_rds("../Model Objects/test_df_count.RDS")
 
-new_data_to_model_detect = read_rds("data_to_model/new_data_to_model_detect.RDS")
-new_data_to_model_count = read_rds("data_to_model/new_data_to_model_count.RDS")
+new_data_to_model_detect = read_rds("../data_to_model/new_data_to_model_detect.RDS")
+new_data_to_model_count = read_rds("../data_to_model/new_data_to_model_count.RDS")
 ```
 
 
@@ -55,9 +55,9 @@ indxs = which(new_lin_preds_detect != new_lin_preds_count)
 
 new_data_to_model_detect_wprerds = new_data_to_model_detect |> mutate(detect_pred = new_lin_preds_detect , count_pred = new_lin_preds_count)
 
-narr_tbl = read_csv("data_to_model/narrative_tbl_all.csv")
+narr_tbl = read_csv("../data_to_model/narrative_tbl_all.csv")
 
-new_data_to_model_detect_wprerds[indxs,] |> left_join(narr_tbl) |> write_csv("disagree_rows.csv")
+new_data_to_model_detect_wprerds[indxs,] |> left_join(narr_tbl) |> write_csv("../disagree_rows.csv")
 ```
 
 
