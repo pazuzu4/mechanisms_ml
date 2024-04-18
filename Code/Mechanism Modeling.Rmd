@@ -16,11 +16,17 @@ Read in clean data
 model_df_final_detect = read_rds("../data_to_model/model_df_final_detect.rds")
 model_df_final_count = read_rds("../data_to_model/model_df_final_count.rds")
 
+model_df_final_count_bin = read_rds("../data_to_model/model_df_final_count.rds") |> 
+  mutate(primary_mechanism_bin = ifelse(as.character(primary_mechanism) == "Multi-sport", "Multi-sport", "Other")
+         ,primary_mechanism_bin = factor(primary_mechanism_bin)
+         ) |>
+  select(-primary_mechanism)
 ```
 
 
 ```{r}
-#new_data_to_model_detect 
+# model_df_final_count_bin |>
+#   count(primary_mechanism_bin)
 ```
 
 
@@ -30,8 +36,9 @@ Drop unused columns
 Stratify the random sample by the outcome
 
 ```{r}
+set.seed(4)
 cols_not_mod = c("cpsc_case_number","psu","stratum","weight","treatment_date")
-    
+
 init_split <- initial_split(model_df_final_detect, prop = .75, strata = "primary_mechanism")
 
 train_df_detect <- training(init_split)
@@ -39,10 +46,28 @@ test_df_detect <- testing(init_split)
 
 train_df_count <- model_df_final_count[init_split$in_id,]
 test_df_count <- model_df_final_count[-init_split$in_id,]
+```
 
+
+```{r}
+init_split_bin <- initial_split(model_df_final_count_bin, prop = .75, strata = "primary_mechanism_bin")
+
+train_df_count_bin <- training(init_split_bin)
+test_df_count_bin <- testing(init_split_bin)
+```
+
+
+
+```{r}
 trctrl <- trainControl(method = "cv", number = 10, verboseIter = T)
 select(train_df_detect, -all_of(cols_not_mod) )
 select(train_df_count, -all_of(cols_not_mod) )
+select(train_df_count_bin, -all_of(cols_not_mod) )
+```
+
+```{r}
+lin_mod_count_bin <- train(primary_mechanism_bin~., data = select(train_df_count_bin, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl)
+lin_mod_count_bin_wt <- train(primary_mechanism_bin~., data = select(train_df_count_bin, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl, weights = train_df_count_bin$weight)
 ```
 
 
