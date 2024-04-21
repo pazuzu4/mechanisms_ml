@@ -86,7 +86,7 @@ lin_mod_count_wt <- train(primary_mechanism~., data = select(train_df_count, -al
 
 ```
 
-Saving models to an RDS file
+Saving models, train+test sets to RDS files
 ```{r}
 
 train_df_detect |> write_rds("../Model Objects/train_df_detect.RDS")
@@ -95,12 +95,19 @@ test_df_detect |> write_rds("../Model Objects/test_df_detect.RDS")
 train_df_count |> write_rds("../Model Objects/test_df_count.RDS")
 test_df_count |> write_rds("../Model Objects/test_df_count.RDS")
 
+train_df_count_bin |> write_rds("../Model Objects/train_df_count_bin.RDS")
+test_df_count_bin |> write_rds("../Model Objects/test_df_count_bin.RDS")
+
 
 lin_mod_detect |> write_rds("../Model Objects/lin_mod_detect.RDS")
 lin_mod_detect_wt |> write_rds("../Model Objects/lin_mod_detect_wt.RDS")
 
 lin_mod_count |> write_rds("../Model Objects/lin_mod_count.RDS")
 lin_mod_count_wt |> write_rds("../Model Objects/lin_mod_count_wt.RDS")
+
+
+lin_mod_count_bin |> write_rds("../Model Objects/lin_mod_count_bin.RDS")
+lin_mod_count_bin_wt |> write_rds("../Model Objects/lin_mod_count_bin_wt.RDS")
 
 ```
 
