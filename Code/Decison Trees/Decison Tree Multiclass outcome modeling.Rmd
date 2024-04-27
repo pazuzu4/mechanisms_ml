@@ -19,10 +19,6 @@ test_df_count = read_csv("../data_to_model/Train and Test Sets/test_df_count.csv
 
 train_df_detect = read_csv("../data_to_model/Train and Test Sets/train_df_detect.csv")
 test_df_detect = read_csv("../data_to_model/Train and Test Sets/test_df_detect.csv")
-
-
-train_df_count_bin = read_csv("../data_to_model/Train and Test Sets/train_df_count_bin.csv")
-test_df_count_bin = read_csv("../data_to_model/Train and Test Sets/test_df_count_bin.csv")
 ```
 
 
@@ -30,17 +26,15 @@ test_df_count_bin = read_csv("../data_to_model/Train and Test Sets/test_df_count
 ```{r}
 cols_not_mod = c("cpsc_case_number","psu","stratum","weight","treatment_date")
 trctrl <- trainControl(method = "cv", number = 10, verboseIter = T)
-select(train_df_detect, -all_of(cols_not_mod) )
-select(train_df_count, -all_of(cols_not_mod) )
-select(train_df_count_bin, -all_of(cols_not_mod) )
+#select(train_df_detect, -all_of(cols_not_mod) )
+#select(train_df_count, -all_of(cols_not_mod) )
 ```
 
 
-Run the model and review confusion matrix
+Train the models unweighted
 ```{r}
 lin_mod_detect <- train(primary_mechanism~., data = select(train_df_detect, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl)
 lin_mod_count <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl)
-lin_mod_count_bin <- train(primary_mechanism_bin~., data = select(train_df_count_bin, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl)
 
 ```
 
@@ -78,59 +72,3 @@ lin_mod_count_bin |> write_rds("../Model Objects/lin_mod_count_bin.RDS")
 lin_mod_count_bin_wt |> write_rds("../Model Objects/lin_mod_count_bin_wt.RDS")
 
 ```
-
-
-
-
-```{r}
-cols_not_mod_svy = c("cpsc_case_number","psu","stratum","weight","treatment_date")
-options( survey.lonely.psu = "adjust", scipen = 99999999)
-
-train_df_count_svy <- svydesign(
-  id = ~psu,
-  strata = ~ interaction(stratum, treatment_year),
-  weights = ~weight,
-  nest = T,
-  data = mutate(train_df_count_bin, treatment_year = year(treatment_date), primary_mechanism_bin2 = ifelse(primary_mechanism_bin == "Multi-sport", 1L, 0L )  )  )
-
-# glm_form = as.formula("primary_mechanism~age+sex+body_part+diagnosis+twist+fall_words+hit_rack_words+hit_ball_words+five_words+mov_words+heat_words+faint_words+cardio_words+hit_other+hit_player+other_sport")
-
-```
-
-```{r}
-
-svy_glm_res = svyglm(formula = primary_mechanism_bin2~age+sex+body_part+diagnosis+fall_words, design = train_df_count_svy, family = "binomial")
-#svy_glm_res2 = svyglm(formula = primary_mechanism2~age+sex+body_part+diagnosis+fall_words, design = train_df_count_svy, family = "gaussian")
-
-
-```
-
-```{r}
-summary(svy_glm_res)
-```
-
-```{r}
-tmp_preds = predict(svy_glm_res, test_df_count, type = "response" )
-
-test_df_count_tmp = mutate(test_df_count, glm_bin_pred = tmp_preds)
-
-test_df_count_tmp |> 
-  mutate(primary_mechanism_bin = ifelse(primary_mechanism == "Multi-sport", "Multi-sport", "Other" )) |>
-  ggplot(aes(glm_bin_pred, fill =  primary_mechanism_bin  ), weights = weight ) +
-  geom_density(alpha = .2)
-
-test_df_count_tmp |> 
-  mutate(primary_mechanism_bin = ifelse(primary_mechanism == "Multi-sport", "Multi-sport", "Other" )) |>
-  ggplot(aes(glm_bin_pred, fill =  primary_mechanism_bin  ), weights = weight ) +
-  geom_histogram() + facet_grid(.~primary_mechanism_bin)
-```
-
-
-```{r}
-train_df_count |>
-  count(primary_mechanism)
-
-mutate(train_df_count, treatment_year = year(treatment_date) , primary_mechanism2 = as.numeric(primary_mechanism) )  |>
-  count(primary_mechanism2)
-```
-

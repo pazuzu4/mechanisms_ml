@@ -1,0 +1,284 @@
+---
+title: "Mechanism Model Data Prep"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Libraries
+```{r}
+library(tidyverse)
+library(janitor)
+library(caret)
+library(tidymodels)
+```
+
+Read in data
+```{r}
+to_comb_cardio_syn = c("Cardiovascular event", "Other syncope or dyspnea")
+to_comb_hit_obj = c("Hit object","Hit player","Hit with ball","Hit with racquet/paddle")
+
+neiss_df_fct_d = read_rds("../clean_data/clean_full.RDS")
+```
+
+
+Custom Functions
+```{r}
+preprocess_neiss <- function(neiss_df, top_diags, top_parts, cols_to_use, is_new = FALSE) {
+  
+  return_df = NULL
+  
+  if(!is_new){
+    cols_to_use = c(cols_to_use, "primary_mechanism")
+  }
+  
+  return_df =  neiss_df |>  
+    mutate( body_part = as.character(body_part)
+         , diagnosis = as.character(diagnosis)
+         , body_part = ifelse(body_part %in% top_parts, body_part, "other")
+         , diagnosis = ifelse(diagnosis %in% top_diags, diagnosis, "other")
+         , narrative = tolower(narrative)
+         , sex = factor(sex)
+         , body_part = factor(body_part)
+         , diagnosis = factor(diagnosis)
+         ) |>
+    select(all_of(cols_to_use))
+  
+  return(return_df)
+}
+
+get_keywords <- function(neiss_df, word_funct = str_detect ) {
+  
+  fall_words <- "slip|trip|fall|dive|dove|fell|d&|foosh"
+  hit_rack_words <- "hit|paddle|racket|raquet|bat"
+  hit_ball_words <- "ball|hit with ball"
+  five_words <- "musculo|contusion|epist"
+  mov_words <- "lunge|bend|hyperex|disloc|sprain|strain|bump|tear|pop|snap|roll|cut|abrasion|sting|jam"
+  heat_words <- "heat|hot|dehydrat"
+  faint_words <- "syncope|dizz|dyspnea" # INTERACT WITH HEAT WORDS?
+  cardio_words <- "heart|rhythm|angina|chest|chest pain|dvt|atax|weak|blood pressure|palpitat"
+  hit_other <- "fence|wall|tree|net|bench|ran into|ran"
+  hit_player <- "ran into|another|player|collieded"
+  other_sport <- "been playing|volly|baseball|basketball|soccer|football|golf|sports"
+
+return_df = NULL
+
+return_df <- neiss_df %>% 
+  mutate(
+    twist = as.integer(word_funct(narrative, "twist")),
+    fall_words  = as.integer(word_funct(narrative, fall_words)),
+    hit_rack_words = as.integer(word_funct(narrative, hit_rack_words)),
+    hit_ball_words = as.integer(word_funct(narrative, hit_ball_words)),
+    five_words = as.integer(word_funct(narrative, five_words)),
+    mov_words = as.integer(word_funct(narrative, mov_words)),
+    heat_words = as.integer(word_funct(narrative, heat_words)),
+    faint_words = as.integer(word_funct(narrative, faint_words)),
+    cardio_words = as.integer(word_funct(narrative, cardio_words)),
+    hit_other = as.integer(word_funct(narrative, hit_other)),
+    hit_player= as.integer(word_funct(narrative, hit_player)),
+    other_sport = as.integer(word_funct(narrative, other_sport))
+  ) |>
+  select(-narrative)
+  
+return(return_df)
+}
+```
+
+
+Filter for new data, using previously labeled data minus fatalities
+```{r}
+pb_model_df = neiss_df_fct_d |>
+  filter(id == "pickleball" & disposition != "FATALITY INCL. DOA, DIED IN ER")# & age >= 50) #|> count(primary_mechanism)
+
+tennis_model_df <- neiss_df_fct_d |>
+  filter(id == "tennis" & disposition != "FATALITY INCL. DOA, DIED IN ER") 
+
+
+consolidated_model_df = pb_model_df |> 
+  bind_rows(tennis_model_df) |> 
+  mutate(
+    primary_mechanism = ifelse(primary_mechanism %in% to_comb_cardio_syn, "cardio/sync", primary_mechanism)
+    ,primary_mechanism = ifelse(primary_mechanism %in% to_comb_hit_obj, "Hit with various obj", primary_mechanism)
+         , primary_mechanism = factor(primary_mechanism)     
+         )  |>
+  select(cpsc_case_number, psu , stratum , weight , treatment_date
+         ,primary_mechanism
+         ,age, sex ,body_part, diagnosis
+#         , body_region, diagnosis_2, other_diagnosis # Possibly add later
+         ,narrative
+         )
+
+#consolidated_model_df
+
+# tmp_r = consolidated_model_df |> apply(2, \(x) sum(is.na(x)) )
+# 
+# tmp_r
+# tmp_r / nrow(consolidated_model_df)
+# 
+# tmp_n = consolidated_model_df |> apply(2, n_distinct )
+# 
+# tmp_n
+# tmp_n / nrow(consolidated_model_df)
+
+
+#consolidated_model_df |> count(other_diagnosis, sort = T) |> View()
+```
+
+
+Get new data, using the same filters used to get the original data
+```{r}
+clean_data <- read_rds("C:/Users/Jake/Desktop/Exercise_Equipment/clean_data/clean_neiss_df_2013-2022.RDS") |> mutate(age = as.numeric(age_in_years) ) |>
+  filter(Treatment_Date >= ymd("2020-01-01") & Disposition != "FATALITY INCL. DOA, DIED IN ER")
+
+tennis_dat = clean_data  |>
+  filter(Product_1 == "TENNIS (ACTIVITY, APPAREL OR EQUIPMENT)" | Product_2 == "TENNIS (ACTIVITY, APPAREL OR EQUIPMENT)" | Product_3 == "TENNIS (ACTIVITY, APPAREL OR EQUIPMENT)") |> 
+  filter(age >= 60) |> mutate(id = "tennis")
+
+pball_words = "pickleball|pickle ball|pickelball|pickel ball"
+
+pball_dat = clean_data  |>
+  filter(str_detect(string = tolower(Narrative), pattern = pball_words  )) |>  
+  mutate(id = "pickleball")
+
+new_data_clean = tennis_dat |>
+  bind_rows(pball_dat) |> janitor::clean_names() |> mutate(age = as.integer(age)) 
+
+```
+
+
+Get used column names and used body parts and diagnosis
+```{r}
+#consolidated_model_df
+m_names = select(consolidated_model_df,-primary_mechanism) |> names()
+
+new_data_clean |> select(all_of(m_names))
+
+parts_use = consolidated_model_df |> count(body_part) |> filter(n > 5) |> pull(body_part)
+diag_use =  consolidated_model_df |> count(diagnosis) |> filter(n > 5) |> pull(diagnosis)
+model_cols = select(consolidated_model_df,-primary_mechanism) |> names()
+```
+
+
+Use custom functions to preprocess both new and old data
+```{r}
+model_df_raw = preprocess_neiss(consolidated_model_df, top_parts = parts_use, top_diags = diag_use, cols_to_use = model_cols )
+
+new_df_prepro = preprocess_neiss(new_data_clean, top_parts = parts_use, top_diags = diag_use, cols_to_use = model_cols, is_new = TRUE )
+```
+
+
+
+```{r}
+model_df_final_detect = model_df_raw |> get_keywords()
+model_df_final_count = model_df_raw |> get_keywords(word_funct = str_count)
+new_data_to_model_detect = new_df_prepro |> get_keywords()
+new_data_to_model_count = new_df_prepro |> get_keywords(word_funct = str_count)
+```
+
+
+
+```{r}
+narrative_tbl = select(model_df_raw, cpsc_case_number, narrative ) |>
+  bind_rows(select(new_df_prepro, cpsc_case_number, narrative )) |>
+  count(cpsc_case_number, narrative) |>
+  select(-n) 
+
+
+
+```
+
+```{r}
+narrative_tbl |>
+  write_csv("../data_to_model/narrative_tbl_all.csv")
+```
+
+
+Export clean data for modeling
+```{r}
+model_df_final_detect |> write_csv("../data_to_model/model_df_final_detect.csv")
+model_df_final_count |> write_csv("../data_to_model/model_df_final_count.csv")
+new_data_to_model_detect |> write_csv("../data_to_model/new_data_to_model_detect.csv")
+new_data_to_model_count |> write_csv("../data_to_model/new_data_to_model_count.csv")
+
+model_df_final_detect |> write_rds("../data_to_model/model_df_final_detect.rds")
+model_df_final_count |> write_rds("../data_to_model/model_df_final_count.rds")
+new_data_to_model_detect |> write_rds("../data_to_model/new_data_to_model_detect.rds")
+new_data_to_model_count |> write_rds("../data_to_model/new_data_to_model_count.rds")
+
+```
+
+
+Export full and narrative data for Keras text preprocessing
+```{r}
+#model_df_raw |> count(primary_mechanism)
+#model_df_raw  |>  mutate(primary_mechanism = as.numeric(primary_mechanism)) |> count(primary_mechanism)
+
+# model_df_raw |> # mutate(primary_mechanism = as.numeric(primary_mechanism)) |> #count(primary_mechanism)
+#   write_csv("../data_to_model/keras_data/model_df_fullv2.csv")
+# 
+# new_df_prepro |> 
+#   write_csv("../data_to_model/keras_data/new_model_df_fullv.csv")
+
+model_df_raw |>  #mutate(primary_mechanism = as.numeric(primary_mechanism)) |> 
+  select(cpsc_case_number, narrative, primary_mechanism) |>
+  write_csv("../data_to_model/keras_data/model_df_full_narrative.csv")
+
+# new_df_prepro |> 
+#     select(cpsc_case_number, narrative) |>
+#   write_csv("../data_to_model/keras_data/new_model_df_full_narrative.csv")
+
+```
+
+
+
+Training + Testing splits and binary outcome
+```{r}
+
+model_df_final_count_bin = model_df_final_count |>
+  mutate(primary_mechanism_bin = ifelse(as.character(primary_mechanism) == "Multi-sport", "Multi-sport", "Other")
+         ,primary_mechanism_bin = factor(primary_mechanism_bin)
+         ) |>
+  select(-primary_mechanism)
+
+```
+
+```{r}
+set.seed(4)
+
+init_split <- initial_split(model_df_final_detect, prop = .85, strata = "primary_mechanism")
+
+train_df_detect <- training(init_split)
+test_df_detect <- testing(init_split)
+
+train_df_count <- model_df_final_count[init_split$in_id,]
+test_df_count <- model_df_final_count[-init_split$in_id,]
+```
+
+
+```{r}
+set.seed(4)
+
+init_split_bin <- initial_split(model_df_final_count_bin, prop = .85, strata = "primary_mechanism_bin")
+
+train_df_count_bin <- training(init_split_bin)
+test_df_count_bin <- testing(init_split_bin)
+```
+
+
+```{r}
+train_df_count |> write_csv("../data_to_model/Train and Test Sets/train_df_count.csv")
+test_df_count |> write_csv("../data_to_model/Train and Test Sets/test_df_count.csv")
+
+train_df_detect |> write_csv("../data_to_model/Train and Test Sets/train_df_detect.csv")
+test_df_detect |> write_csv("../data_to_model/Train and Test Sets/test_df_detect.csv")
+
+
+train_df_count_bin |> write_csv("../data_to_model/Train and Test Sets/train_df_count_bin.csv")
+test_df_count_bin |> write_csv("../data_to_model/Train and Test Sets/test_df_count_bin.csv")
+
+```
+
+
+
