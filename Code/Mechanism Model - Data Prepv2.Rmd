@@ -247,7 +247,7 @@ model_df_final_count_bin = model_df_final_count |>
 ```{r}
 set.seed(4)
 
-init_split <- initial_split(model_df_final_detect, prop = .85, strata = "primary_mechanism")
+init_split <- initial_split(model_df_final_detect, prop = .80, strata = "primary_mechanism")
 
 train_df_detect <- training(init_split)
 test_df_detect <- testing(init_split)
@@ -260,7 +260,7 @@ test_df_count <- model_df_final_count[-init_split$in_id,]
 ```{r}
 set.seed(4)
 
-init_split_bin <- initial_split(model_df_final_count_bin, prop = .85, strata = "primary_mechanism_bin")
+init_split_bin <- initial_split(model_df_final_count_bin, prop = .80, strata = "primary_mechanism_bin")
 
 train_df_count_bin <- training(init_split_bin)
 test_df_count_bin <- testing(init_split_bin)
