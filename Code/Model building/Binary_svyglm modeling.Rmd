@@ -1,0 +1,72 @@
+---
+title: "Mechanism Model"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(janitor)
+library(caret)
+library(tidymodels)
+library(survey)
+```
+
+
+```{r}
+train_df_count_bin = read_csv("../../data_to_model/Train and Test Sets/train_df_count_bin.csv")
+test_df_count_bin = read_csv("../../data_to_model/Train and Test Sets/test_df_count_bin.csv")
+new_df_count_bin = read_csv("../../data_to_model/new_data_to_model_count.csv")
+```
+
+```{r}
+cols_not_mod_svy = c("cpsc_case_number","psu","stratum","weight","treatment_date")
+options( survey.lonely.psu = "adjust", scipen = 99999999)
+
+train_df_count_svy <- svydesign(
+  id = ~psu,
+  strata = ~ interaction(stratum, treatment_year),
+  weights = ~weight,
+  nest = T,
+  data = mutate(train_df_count_bin, treatment_year = year(treatment_date), primary_mechanism_bin2 = ifelse(primary_mechanism_bin == "Multi-sport", 1L, 0L )  )  )
+
+# glm_form = as.formula("primary_mechanism~age+sex+body_part+diagnosis+twist+fall_words+hit_rack_words+hit_ball_words+five_words+mov_words+heat_words+faint_words+cardio_words+hit_other+hit_player+other_sport")
+
+```
+
+```{r}
+
+svy_glm_res = svyglm(formula = primary_mechanism_bin2~age+sex+body_part+diagnosis+fall_words, design = train_df_count_svy, family = "binomial")
+#svy_glm_res2 = svyglm(formula = primary_mechanism2~age+sex+body_part+diagnosis+fall_words, design = train_df_count_svy, family = "gaussian")
+
+
+```
+
+```{r}
+summary(svy_glm_res)
+```
+
+```{r}
+test_preds = predict(svy_glm_res, test_df_count_bin, type = "response" )
+new_preds = predict(svy_glm_res, new_df_count_bin, type = "response" )
+#summary(test_preds)
+
+test_preds_lab = ifelse(test_preds > .1, "Multi-sport", "Other")
+new_preds_lab = ifelse(new_preds > .1, "Multi-sport", "Other")
+
+table(test_preds_lab)
+table(new_preds_lab)
+
+results_df_test = data.frame(cpsc_case_number = test_df_count_bin$cpsc_case_number, bin_svyglm_pred = test_preds_lab)
+results_df_test
+
+
+results_df_new = data.frame(cpsc_case_number = new_df_count_bin$cpsc_case_number, bin_svyglm_pred = new_preds_lab)
+results_df_new
+```
+
+```{r}
+results_df_test |> write_csv("../../Results/Prediction Data/svyglm_binary_test_out.csv")
+results_df_new |> write_csv("../../Results/Prediction Data/svyglm_binary_new_out.csv")
+```
+

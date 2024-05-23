@@ -1,0 +1,171 @@
+---
+title: "Mechanism Model"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(janitor)
+library(caret)
+library(tidymodels)
+```
+
+
+```{r}
+# lin_mod_detect = read_rds("../Model Objects/lin_mod_detect.RDS")
+# lin_mod_detect_wt = read_rds("../Model Objects/lin_mod_detect_wt.RDS")
+# 
+# lin_mod_count = read_rds("../Model Objects/lin_mod_count.RDS")
+# lin_mod_count_wt = read_rds("../Model Objects/lin_mod_count_wt.RDS")
+# 
+# lin_mod_count_bin = read_rds("../Model Objects/lin_mod_count_bin.RDS")
+# lin_mod_count_bin_wt = read_rds("../Model Objects/lin_mod_count_bin_wt.RDS")
+
+#train_df_detect = read_rds("Model Objects/train_df_detect.RDS")
+#test_df_detect = read_rds("../Model Objects/test_df_detect.RDS")
+
+
+train_df_count = read_csv("../data_to_model/Train and Test Sets/test_df_count.csv")
+test_df_count = read_csv("../data_to_model/Train and Test Sets/test_df_count.csv")
+
+new_df_count = read_csv("../data_to_model/new_data_to_model_count.csv")
+
+test_df_count_bin = read_csv("../data_to_model/Train and Test Sets/test_df_count_bin.csv")
+new_df_count_bin = read_csv("../data_to_model/new_data_to_model_count.csv")
+# new_data_to_model_detect = read_rds("../data_to_model/new_data_to_model_detect.RDS")
+# new_data_to_model_count = read_rds("../data_to_model/new_data_to_model_count.RDS")
+```
+
+Read in all test sets
+```{r}
+#Binary
+keras_binary_test = read_csv("Prediction Data/keras_binary_test_out.csv")[,2:3] |> rename(keras_bin_pred = pred)
+svyglm_binary_test = read_csv("Prediction Data/svyglm_binary_test_out.csv")
+
+#Multiclass
+
+keras_multiclass_test = read_csv("Prediction Data/keras_multiclass_test_out.csv")[,2:3] |> rename(keras_multi_pred = pred)
+tree_mutliclass_test = read_csv("Prediction Data/tree_multiclass_test_out.csv")
+
+```
+
+
+```{r}
+test_df_count_aug = test_df_count |>
+  left_join(keras_multiclass_test) |>
+  left_join(tree_mutliclass_test)
+
+bin_test_df_aug = test_df_count_bin |>
+  left_join(keras_binary_test) |>
+  left_join(svyglm_binary_test)
+```
+
+
+```{r}
+confusionMatrix(factor(test_df_count_aug$wt_test_tree_preds), factor(test_df_count_aug$primary_mechanism))
+```
+
+```{r}
+confusionMatrix(factor(test_df_count_aug$keras_multi_pred), factor(test_df_count_aug$primary_mechanism))
+```
+
+
+```{r}
+confusionMatrix(factor(bin_test_df_aug$bin_svyglm_pred), factor(bin_test_df_aug$primary_mechanism_bin))
+```
+
+```{r}
+confusionMatrix(factor(bin_test_df_aug$keras_bin_pred), factor(bin_test_df_aug$primary_mechanism_bin))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+Read in all new sets
+```{r}
+#Binary
+keras_binary_new = read_csv("Prediction Data/keras_binary_new_out.csv")[,2:3]
+svyglm_binary_new = read_csv("Prediction Data/svyglm_binary_new_out.csv")
+
+
+```
+
+
+
+
+
+Create confusion matrix for unweighted result
+```{r}
+lin_preds_detect <- predict(lin_mod_detect, test_df_detect)
+lin_preds_count <- predict(lin_mod_count, test_df_count)
+
+confusionMatrix(lin_preds_detect, test_df_detect$primary_mechanism)
+confusionMatrix(lin_preds_count, test_df_count$primary_mechanism)
+
+```
+
+
+
+```{r}
+lin_preds_count_bin <- predict(lin_mod_count_bin, test_df_count_bin)
+lin_preds_count_bin_wt <- predict(lin_mod_count_bin_wt, test_df_count_bin)
+
+confusionMatrix(lin_preds_count_bin, test_df_count_bin$primary_mechanism_bin)
+confusionMatrix(lin_preds_count_bin_wt, test_df_count_bin$primary_mechanism_bin)
+```
+
+
+
+Apply unweighted model predictions on new 2020-2022 data
+```{r}
+new_lin_preds_detect <- predict(lin_mod_detect, new_data_to_model_detect)
+new_lin_preds_count <- predict(lin_mod_count, new_data_to_model_count)
+
+table(new_lin_preds_detect)
+table(new_lin_preds_count)
+
+indxs = which(new_lin_preds_detect != new_lin_preds_count)
+
+new_data_to_model_detect_wprerds = new_data_to_model_detect |> mutate(detect_pred = new_lin_preds_detect , count_pred = new_lin_preds_count)
+
+narr_tbl = read_csv("../data_to_model/narrative_tbl_all.csv")
+
+new_data_to_model_detect_wprerds[indxs,] |> left_join(narr_tbl) |> write_csv("../disagree_rows.csv")
+```
+
+
+Accounting for survey weights
+```{r}
+lin_preds_detect_wt <- predict(lin_mod_detect_wt, test_df_detect)
+lin_preds_count_wt <- predict(lin_mod_count_wt, test_df_count)
+
+confusionMatrix(lin_preds_detect_wt, test_df_detect$primary_mechanism)
+confusionMatrix(lin_preds_count_wt, test_df_count$primary_mechanism)
+```
+
+
+Review elbow charts by model type
+```{r}
+plot(lin_mod_detect)
+plot(lin_mod_detect_wt)
+plot(lin_mod_count)
+plot(lin_mod_count_wt)
+```
+
+
+Variable Importance values
+```{r}
+varImp(lin_mod_detect)
+varImp(lin_mod_detect_wt)
+```
+
+

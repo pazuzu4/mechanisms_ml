@@ -1,0 +1,990 @@
+,cpsc_case_number,pred
+0,220215168,"Falls, trips, etc."
+1,211208134,"Falls, trips, etc."
+2,200225760,"Falls, trips, etc."
+3,220643990,Other mechanism
+4,200135456,cardio/sync
+5,200645057,Other mechanism
+6,200330791,"Falls, trips, etc."
+7,201039039,"Falls, trips, etc."
+8,221226712,Undetermined/unknown
+9,211170320,Other mechanism
+10,201227400,"Falls, trips, etc."
+11,211264171,"Falls, trips, etc."
+12,200349614,"Falls, trips, etc."
+13,230130109,"Falls, trips, etc."
+14,200726335,"Falls, trips, etc."
+15,210328763,"Falls, trips, etc."
+16,200326774,Hit with various obj
+17,201251089,Other mechanism
+18,200149451,"Falls, trips, etc."
+19,210433228,"Falls, trips, etc."
+20,200542519,"Falls, trips, etc."
+21,210303745,Hit with various obj
+22,220838428,"Falls, trips, etc."
+23,221107502,Hit with various obj
+24,210316675,"Falls, trips, etc."
+25,200356033,Other mechanism
+26,220313499,Multi-sport
+27,210832962,"Falls, trips, etc."
+28,210343011,Hit with various obj
+29,200705528,Other mechanism
+30,210119388,cardio/sync
+31,211238049,"Falls, trips, etc."
+32,220256126,"Falls, trips, etc."
+33,201203804,"Falls, trips, etc."
+34,220328022,Other mechanism
+35,220728353,"Falls, trips, etc."
+36,201011680,"Falls, trips, etc."
+37,200149562,"Falls, trips, etc."
+38,200408646,"Falls, trips, etc."
+39,210230696,"Falls, trips, etc."
+40,210214450,"Falls, trips, etc."
+41,200223522,"Falls, trips, etc."
+42,220523612,"Falls, trips, etc."
+43,210345341,"Falls, trips, etc."
+44,210407344,"Falls, trips, etc."
+45,210225968,Other mechanism
+46,220302251,Other mechanism
+47,200738318,Other mechanism
+48,220649919,"Falls, trips, etc."
+49,220729383,"Falls, trips, etc."
+50,201118053,"Falls, trips, etc."
+51,210436007,"Falls, trips, etc."
+52,210960803,"Falls, trips, etc."
+53,220807597,Undetermined/unknown
+54,200246025,"Falls, trips, etc."
+55,200351655,Other mechanism
+56,220428148,"Falls, trips, etc."
+57,221223714,"Falls, trips, etc."
+58,211228921,Other mechanism
+59,221064378,"Falls, trips, etc."
+60,210528885,"Falls, trips, etc."
+61,220302228,"Falls, trips, etc."
+62,200628664,cardio/sync
+63,210949453,"Falls, trips, etc."
+64,230111236,"Falls, trips, etc."
+65,221054823,cardio/sync
+66,221028100,"Falls, trips, etc."
+67,220512370,"Falls, trips, etc."
+68,221143181,"Falls, trips, etc."
+69,220247325,"Falls, trips, etc."
+70,211054418,Other mechanism
+71,210644944,Heat stroke
+72,220222255,"Falls, trips, etc."
+73,210303676,Other mechanism
+74,220702529,"Falls, trips, etc."
+75,210343245,Other mechanism
+76,220958355,Undetermined/unknown
+77,211219198,Other mechanism
+78,211103175,"Falls, trips, etc."
+79,200915632,"Falls, trips, etc."
+80,211216620,Undetermined/unknown
+81,211060111,"Falls, trips, etc."
+82,200725557,"Falls, trips, etc."
+83,210457817,Other mechanism
+84,200218658,"Falls, trips, etc."
+85,221061555,Undetermined/unknown
+86,201123666,"Falls, trips, etc."
+87,210653817,"Falls, trips, etc."
+88,220523324,Other mechanism
+89,210403735,Other mechanism
+90,200206948,Other mechanism
+91,200355779,"Falls, trips, etc."
+92,200241752,Other mechanism
+93,200246164,"Falls, trips, etc."
+94,211151181,Heat stroke
+95,210760208,"Falls, trips, etc."
+96,220369130,"Falls, trips, etc."
+97,210744028,Other mechanism
+98,200319970,"Falls, trips, etc."
+99,220228927,Other mechanism
+100,220513118,Other mechanism
+101,221224270,Undetermined/unknown
+102,220640492,"Falls, trips, etc."
+103,220619757,"Falls, trips, etc."
+104,200120874,"Falls, trips, etc."
+105,210359092,Undetermined/unknown
+106,221232083,"Falls, trips, etc."
+107,220157117,Other mechanism
+108,210617472,"Falls, trips, etc."
+109,220103549,"Falls, trips, etc."
+110,200202823,"Falls, trips, etc."
+111,200308010,"Falls, trips, etc."
+112,201036060,"Falls, trips, etc."
+113,220737700,"Falls, trips, etc."
+114,220518698,Hit with various obj
+115,210352942,Other mechanism
+116,200207014,Undetermined/unknown
+117,200217869,Other mechanism
+118,220310581,cardio/sync
+119,201041291,"Falls, trips, etc."
+120,200723331,Other mechanism
+121,200413422,"Falls, trips, etc."
+122,210613017,"Falls, trips, etc."
+123,210206842,"Falls, trips, etc."
+124,221115255,cardio/sync
+125,210629643,Other mechanism
+126,220631652,Undetermined/unknown
+127,220256119,Hit with various obj
+128,211145161,Hit with various obj
+129,220260138,"Falls, trips, etc."
+130,210840180,Hit with various obj
+131,200752320,"Falls, trips, etc."
+132,210350520,"Falls, trips, etc."
+133,210324742,Undetermined/unknown
+134,201237982,Other mechanism
+135,220346540,"Falls, trips, etc."
+136,200817857,Other mechanism
+137,210315132,Other mechanism
+138,220614247,Other mechanism
+139,220940770,Other mechanism
+140,211155797,"Falls, trips, etc."
+141,221231706,"Falls, trips, etc."
+142,210210968,Other mechanism
+143,220452017,Other mechanism
+144,200228602,"Falls, trips, etc."
+145,200140060,"Falls, trips, etc."
+146,220308109,cardio/sync
+147,220122537,"Falls, trips, etc."
+148,210222161,"Falls, trips, etc."
+149,220560824,"Falls, trips, etc."
+150,230144415,Hit with various obj
+151,200736374,"Falls, trips, etc."
+152,200208464,Undetermined/unknown
+153,211112434,Undetermined/unknown
+154,200537827,"Falls, trips, etc."
+155,210812003,Undetermined/unknown
+156,200914573,Other mechanism
+157,211052450,"Falls, trips, etc."
+158,221259352,"Falls, trips, etc."
+159,200200334,"Falls, trips, etc."
+160,210553251,"Falls, trips, etc."
+161,220751476,"Falls, trips, etc."
+162,211147685,Heat stroke
+163,210813165,Other mechanism
+164,210807136,"Falls, trips, etc."
+165,220328097,"Falls, trips, etc."
+166,210412328,"Falls, trips, etc."
+167,210855834,"Falls, trips, etc."
+168,220157527,Other mechanism
+169,200218653,"Falls, trips, etc."
+170,200624390,Hit with various obj
+171,200624668,"Falls, trips, etc."
+172,220148322,Other mechanism
+173,200739191,"Falls, trips, etc."
+174,201005297,"Falls, trips, etc."
+175,210866136,Other mechanism
+176,221246141,"Falls, trips, etc."
+177,220958003,Undetermined/unknown
+178,220254324,"Falls, trips, etc."
+179,211005389,Undetermined/unknown
+180,200851606,"Falls, trips, etc."
+181,220609028,"Falls, trips, etc."
+182,210839134,Undetermined/unknown
+183,210448545,"Falls, trips, etc."
+184,220308151,cardio/sync
+185,220118790,"Falls, trips, etc."
+186,200129845,Heat stroke
+187,210906219,"Falls, trips, etc."
+188,220143931,"Falls, trips, etc."
+189,210709777,"Falls, trips, etc."
+190,211208031,Other mechanism
+191,200330860,"Falls, trips, etc."
+192,210555445,"Falls, trips, etc."
+193,200135447,"Falls, trips, etc."
+194,210131361,Hit with various obj
+195,201121567,"Falls, trips, etc."
+196,211058310,"Falls, trips, etc."
+197,200135309,Other mechanism
+198,221239911,"Falls, trips, etc."
+199,210119352,"Falls, trips, etc."
+200,210650931,Undetermined/unknown
+201,200312853,Other mechanism
+202,200827120,"Falls, trips, etc."
+203,200739227,"Falls, trips, etc."
+204,211013129,"Falls, trips, etc."
+205,201238711,"Falls, trips, etc."
+206,220210032,"Falls, trips, etc."
+207,210725970,"Falls, trips, etc."
+208,201029156,"Falls, trips, etc."
+209,200339173,"Falls, trips, etc."
+210,221051180,"Falls, trips, etc."
+211,201205222,Other mechanism
+212,210319219,"Falls, trips, etc."
+213,220612305,Undetermined/unknown
+214,220209883,Other mechanism
+215,220421101,"Falls, trips, etc."
+216,210902782,Undetermined/unknown
+217,210655113,"Falls, trips, etc."
+218,210535404,Heat stroke
+219,220121178,"Falls, trips, etc."
+220,220959713,Hit with various obj
+221,210623594,"Falls, trips, etc."
+222,210939800,Other mechanism
+223,200218652,"Falls, trips, etc."
+224,220909561,"Falls, trips, etc."
+225,210333722,"Falls, trips, etc."
+226,210764429,Heat stroke
+227,210211002,"Falls, trips, etc."
+228,210532942,"Falls, trips, etc."
+229,210353386,Other mechanism
+230,221004657,"Falls, trips, etc."
+231,221260866,"Falls, trips, etc."
+232,210205619,Other mechanism
+233,210327414,"Falls, trips, etc."
+234,210555586,"Falls, trips, etc."
+235,201038751,Hit with various obj
+236,210349313,"Falls, trips, etc."
+237,220924943,"Falls, trips, etc."
+238,201034900,Heat stroke
+239,211058293,"Falls, trips, etc."
+240,220139115,"Falls, trips, etc."
+241,221154825,"Falls, trips, etc."
+242,220206743,"Falls, trips, etc."
+243,221138425,"Falls, trips, etc."
+244,210558823,"Falls, trips, etc."
+245,220963961,Undetermined/unknown
+246,220516032,"Falls, trips, etc."
+247,220361857,"Falls, trips, etc."
+248,230166876,"Falls, trips, etc."
+249,200527535,"Falls, trips, etc."
+250,210219223,"Falls, trips, etc."
+251,220417111,"Falls, trips, etc."
+252,200627557,Heat stroke
+253,230156633,Other mechanism
+254,220222285,Other mechanism
+255,210948528,cardio/sync
+256,220504581,"Falls, trips, etc."
+257,210243859,Other mechanism
+258,211123765,Other mechanism
+259,220310683,"Falls, trips, etc."
+260,221158736,"Falls, trips, etc."
+261,210834302,"Falls, trips, etc."
+262,220361663,"Falls, trips, etc."
+263,221157420,"Falls, trips, etc."
+264,220824620,"Falls, trips, etc."
+265,200203963,Undetermined/unknown
+266,220870426,Undetermined/unknown
+267,220558820,Undetermined/unknown
+268,200219831,Other mechanism
+269,220144155,"Falls, trips, etc."
+270,210358473,"Falls, trips, etc."
+271,200317220,cardio/sync
+272,211145167,"Falls, trips, etc."
+273,211064879,Other mechanism
+274,221256137,Undetermined/unknown
+275,220158665,"Falls, trips, etc."
+276,211061073,Other mechanism
+277,220855347,Undetermined/unknown
+278,211200069,"Falls, trips, etc."
+279,220951719,Undetermined/unknown
+280,220563596,cardio/sync
+281,210805614,"Falls, trips, etc."
+282,220228496,"Falls, trips, etc."
+283,210216898,"Falls, trips, etc."
+284,211150558,"Falls, trips, etc."
+285,220802784,"Falls, trips, etc."
+286,200944872,"Falls, trips, etc."
+287,211258863,"Falls, trips, etc."
+288,220302479,"Falls, trips, etc."
+289,211228314,"Falls, trips, etc."
+290,210509632,Other mechanism
+291,200830312,Other mechanism
+292,210763815,"Falls, trips, etc."
+293,220871948,Hit with various obj
+294,211230563,"Falls, trips, etc."
+295,211103507,"Falls, trips, etc."
+296,210426214,"Falls, trips, etc."
+297,200619927,"Falls, trips, etc."
+298,211138857,"Falls, trips, etc."
+299,210446431,Other mechanism
+300,200738085,Heat stroke
+301,221259430,cardio/sync
+302,210236007,"Falls, trips, etc."
+303,220259907,"Falls, trips, etc."
+304,211064048,"Falls, trips, etc."
+305,220302182,Undetermined/unknown
+306,200219815,"Falls, trips, etc."
+307,200351851,"Falls, trips, etc."
+308,210643065,"Falls, trips, etc."
+309,200736645,cardio/sync
+310,210117815,"Falls, trips, etc."
+311,220823093,"Falls, trips, etc."
+312,200241842,Other mechanism
+313,211214726,"Falls, trips, etc."
+314,220509876,Other mechanism
+315,211252632,"Falls, trips, etc."
+316,210664318,Hit with various obj
+317,200911298,Other mechanism
+318,220355239,"Falls, trips, etc."
+319,210947044,"Falls, trips, etc."
+320,220564737,"Falls, trips, etc."
+321,211212390,"Falls, trips, etc."
+322,220715921,"Falls, trips, etc."
+323,200925569,"Falls, trips, etc."
+324,220942737,Hit with various obj
+325,221139752,Other mechanism
+326,201205330,Undetermined/unknown
+327,211208144,Other mechanism
+328,210353047,Other mechanism
+329,221033273,Undetermined/unknown
+330,220533104,"Falls, trips, etc."
+331,210539966,Heat stroke
+332,220306164,"Falls, trips, etc."
+333,210964566,"Falls, trips, etc."
+334,210642202,Hit with various obj
+335,220852585,"Falls, trips, etc."
+336,220435025,Multi-sport
+337,211237562,Other mechanism
+338,220133070,"Falls, trips, etc."
+339,210331786,"Falls, trips, etc."
+340,220209842,Other mechanism
+341,220728462,Multi-sport
+342,200514618,"Falls, trips, etc."
+343,220859302,"Falls, trips, etc."
+344,220421836,Hit with various obj
+345,200147293,"Falls, trips, etc."
+346,200936805,"Falls, trips, etc."
+347,220942989,Other mechanism
+348,200325917,"Falls, trips, etc."
+349,220452982,"Falls, trips, etc."
+350,200149780,"Falls, trips, etc."
+351,221163669,"Falls, trips, etc."
+352,200208941,"Falls, trips, etc."
+353,210413758,"Falls, trips, etc."
+354,230245903,Other mechanism
+355,200842522,Undetermined/unknown
+356,220463244,"Falls, trips, etc."
+357,220612177,Heat stroke
+358,210960675,"Falls, trips, etc."
+359,210204715,Undetermined/unknown
+360,220802822,Other mechanism
+361,220839403,cardio/sync
+362,200135198,"Falls, trips, etc."
+363,220523296,Other mechanism
+364,220222744,cardio/sync
+365,200239953,Other mechanism
+366,210446888,"Falls, trips, etc."
+367,210560048,Heat stroke
+368,210458071,"Falls, trips, etc."
+369,220726194,"Falls, trips, etc."
+370,210658008,"Falls, trips, etc."
+371,200903560,Other mechanism
+372,220731306,"Falls, trips, etc."
+373,210346293,Other mechanism
+374,220516828,Hit with various obj
+375,220614222,"Falls, trips, etc."
+376,210509637,"Falls, trips, etc."
+377,210343143,Other mechanism
+378,220230663,Hit with various obj
+379,210602892,Other mechanism
+380,210664373,"Falls, trips, etc."
+381,200517027,"Falls, trips, etc."
+382,220240058,"Falls, trips, etc."
+383,211151386,"Falls, trips, etc."
+384,201048324,cardio/sync
+385,230122408,cardio/sync
+386,200204077,Other mechanism
+387,210135568,"Falls, trips, etc."
+388,210650963,"Falls, trips, etc."
+389,220630353,Heat stroke
+390,220718250,"Falls, trips, etc."
+391,220838647,Other mechanism
+392,210223302,Other mechanism
+393,211120134,"Falls, trips, etc."
+394,210358448,Other mechanism
+395,210823856,"Falls, trips, etc."
+396,210205623,"Falls, trips, etc."
+397,200522338,"Falls, trips, etc."
+398,200213679,"Falls, trips, etc."
+399,211208072,"Falls, trips, etc."
+400,220349914,Undetermined/unknown
+401,200223602,cardio/sync
+402,210509606,"Falls, trips, etc."
+403,210530276,"Falls, trips, etc."
+404,230110008,Hit with various obj
+405,211039265,"Falls, trips, etc."
+406,221165480,Undetermined/unknown
+407,200239954,"Falls, trips, etc."
+408,211061904,"Falls, trips, etc."
+409,220118865,Multi-sport
+410,221002442,"Falls, trips, etc."
+411,220557059,"Falls, trips, etc."
+412,221213927,"Falls, trips, etc."
+413,220205060,"Falls, trips, etc."
+414,200255432,"Falls, trips, etc."
+415,210419893,"Falls, trips, etc."
+416,210114096,"Falls, trips, etc."
+417,200600450,Other mechanism
+418,220919639,Heat stroke
+419,220355165,Other mechanism
+420,221052451,Undetermined/unknown
+421,211219286,Other mechanism
+422,220839380,"Falls, trips, etc."
+423,221008977,"Falls, trips, etc."
+424,211237579,"Falls, trips, etc."
+425,210113935,Other mechanism
+426,211014835,"Falls, trips, etc."
+427,220350018,"Falls, trips, etc."
+428,211231544,"Falls, trips, etc."
+429,230132448,"Falls, trips, etc."
+430,220523778,Undetermined/unknown
+431,201230122,Other mechanism
+432,220906327,"Falls, trips, etc."
+433,210219121,Other mechanism
+434,221161101,Hit with various obj
+435,220361763,Other mechanism
+436,210435573,Other mechanism
+437,230132505,"Falls, trips, etc."
+438,211006754,Undetermined/unknown
+439,211227509,"Falls, trips, etc."
+440,220836683,"Falls, trips, etc."
+441,210205657,Other mechanism
+442,220451122,Other mechanism
+443,220852420,cardio/sync
+444,200839339,"Falls, trips, etc."
+445,220812092,cardio/sync
+446,220828541,Undetermined/unknown
+447,220937655,"Falls, trips, etc."
+448,201233374,cardio/sync
+449,211202667,"Falls, trips, etc."
+450,220712898,"Falls, trips, etc."
+451,210447034,Other mechanism
+452,211244031,"Falls, trips, etc."
+453,200621005,Hit with various obj
+454,210124804,"Falls, trips, etc."
+455,210232026,"Falls, trips, etc."
+456,220355335,"Falls, trips, etc."
+457,220317560,"Falls, trips, etc."
+458,220226882,"Falls, trips, etc."
+459,220669358,Other mechanism
+460,220842112,Undetermined/unknown
+461,211102118,"Falls, trips, etc."
+462,201243242,Hit with various obj
+463,220737772,"Falls, trips, etc."
+464,220120208,"Falls, trips, etc."
+465,210323348,"Falls, trips, etc."
+466,220415229,"Falls, trips, etc."
+467,220205046,Other mechanism
+468,210246156,"Falls, trips, etc."
+469,220141328,"Falls, trips, etc."
+470,210142773,Other mechanism
+471,210410294,"Falls, trips, etc."
+472,210829300,Other mechanism
+473,220202569,"Falls, trips, etc."
+474,200218374,"Falls, trips, etc."
+475,210729580,cardio/sync
+476,230143634,"Falls, trips, etc."
+477,220310064,"Falls, trips, etc."
+478,210220639,Hit with various obj
+479,210610429,"Falls, trips, etc."
+480,201010721,Heat stroke
+481,210645637,"Falls, trips, etc."
+482,220141194,"Falls, trips, etc."
+483,211165451,"Falls, trips, etc."
+484,220540784,"Falls, trips, etc."
+485,220347852,"Falls, trips, etc."
+486,210101874,"Falls, trips, etc."
+487,210953077,Other mechanism
+488,210208895,"Falls, trips, etc."
+489,200116261,Other mechanism
+490,210907122,"Falls, trips, etc."
+491,220315250,"Falls, trips, etc."
+492,210243788,cardio/sync
+493,221070021,Other mechanism
+494,220748912,"Falls, trips, etc."
+495,211258647,Other mechanism
+496,200312985,"Falls, trips, etc."
+497,200149221,"Falls, trips, etc."
+498,210806573,cardio/sync
+499,221064032,"Falls, trips, etc."
+500,220523134,Hit with various obj
+501,210648268,"Falls, trips, etc."
+502,210731282,"Falls, trips, etc."
+503,210507312,cardio/sync
+504,220415145,"Falls, trips, etc."
+505,200529739,Heat stroke
+506,210139472,Undetermined/unknown
+507,221125700,Hit with various obj
+508,210530027,Heat stroke
+509,210148971,Other mechanism
+510,220227089,"Falls, trips, etc."
+511,220230235,Other mechanism
+512,210428714,Other mechanism
+513,220427094,cardio/sync
+514,200135303,"Falls, trips, etc."
+515,220254443,Other mechanism
+516,210333734,"Falls, trips, etc."
+517,200149790,"Falls, trips, etc."
+518,210202935,Other mechanism
+519,200147191,"Falls, trips, etc."
+520,230130107,"Falls, trips, etc."
+521,200138523,"Falls, trips, etc."
+522,210114090,"Falls, trips, etc."
+523,210416104,"Falls, trips, etc."
+524,200831381,Other mechanism
+525,210333730,Undetermined/unknown
+526,210713164,"Falls, trips, etc."
+527,220508390,Undetermined/unknown
+528,200652919,Undetermined/unknown
+529,221128021,Undetermined/unknown
+530,211250996,Other mechanism
+531,210238612,"Falls, trips, etc."
+532,211026661,Undetermined/unknown
+533,200244078,Undetermined/unknown
+534,200303938,Undetermined/unknown
+535,211212335,"Falls, trips, etc."
+536,220652930,Undetermined/unknown
+537,211029861,Undetermined/unknown
+538,200325961,Other mechanism
+539,210545211,Undetermined/unknown
+540,221248229,Undetermined/unknown
+541,200746142,Heat stroke
+542,220673281,"Falls, trips, etc."
+543,210244471,"Falls, trips, etc."
+544,210620440,Other mechanism
+545,221157775,Hit with various obj
+546,221218354,Other mechanism
+547,210234274,Other mechanism
+548,220646109,"Falls, trips, etc."
+549,210234164,"Falls, trips, etc."
+550,201110749,Multi-sport
+551,221141589,"Falls, trips, etc."
+552,200325548,cardio/sync
+553,220717453,"Falls, trips, etc."
+554,210428702,"Falls, trips, etc."
+555,211136521,Hit with various obj
+556,211044293,Hit with various obj
+557,220240101,Heat stroke
+558,210343012,"Falls, trips, etc."
+559,210651609,"Falls, trips, etc."
+560,210411803,"Falls, trips, etc."
+561,210855831,"Falls, trips, etc."
+562,210718057,Other mechanism
+563,210958226,"Falls, trips, etc."
+564,210234170,"Falls, trips, etc."
+565,200756211,cardio/sync
+566,210959179,Other mechanism
+567,210859562,Hit with various obj
+568,200601927,Other mechanism
+569,210549236,"Falls, trips, etc."
+570,200651198,Hit with various obj
+571,200308033,"Falls, trips, etc."
+572,210902126,"Falls, trips, etc."
+573,220667900,"Falls, trips, etc."
+574,210307431,cardio/sync
+575,220818992,Other mechanism
+576,210206224,"Falls, trips, etc."
+577,200439509,"Falls, trips, etc."
+578,201211820,"Falls, trips, etc."
+579,200523495,cardio/sync
+580,220365920,"Falls, trips, etc."
+581,201139917,"Falls, trips, etc."
+582,220650243,Other mechanism
+583,200202631,Other mechanism
+584,220604129,Undetermined/unknown
+585,201050821,cardio/sync
+586,200910568,Undetermined/unknown
+587,200630960,cardio/sync
+588,221119691,"Falls, trips, etc."
+589,200203996,Undetermined/unknown
+590,220251784,Undetermined/unknown
+591,221202878,"Falls, trips, etc."
+592,211212296,Undetermined/unknown
+593,220523368,"Falls, trips, etc."
+594,200834102,"Falls, trips, etc."
+595,230123754,Other mechanism
+596,220647471,"Falls, trips, etc."
+597,220423702,Undetermined/unknown
+598,200351656,"Falls, trips, etc."
+599,220860434,"Falls, trips, etc."
+600,220540094,Undetermined/unknown
+601,220955064,"Falls, trips, etc."
+602,201028428,Hit with various obj
+603,200157062,"Falls, trips, etc."
+604,230104342,Other mechanism
+605,221135385,Other mechanism
+606,210525690,Hit with various obj
+607,220225110,Other mechanism
+608,201106336,"Falls, trips, etc."
+609,210515878,cardio/sync
+610,220209957,"Falls, trips, etc."
+611,210611546,Undetermined/unknown
+612,220230379,Other mechanism
+613,210917030,"Falls, trips, etc."
+614,220421896,"Falls, trips, etc."
+615,220737807,"Falls, trips, etc."
+616,200410782,"Falls, trips, etc."
+617,200715542,Undetermined/unknown
+618,210214333,"Falls, trips, etc."
+619,210316285,cardio/sync
+620,221119227,Other mechanism
+621,200140140,Other mechanism
+622,200228577,Other mechanism
+623,200253348,Undetermined/unknown
+624,221252173,Other mechanism
+625,220911887,Hit with various obj
+626,210342851,"Falls, trips, etc."
+627,220831074,"Falls, trips, etc."
+628,220667193,"Falls, trips, etc."
+629,220256991,Undetermined/unknown
+630,200144881,"Falls, trips, etc."
+631,200242160,cardio/sync
+632,210532233,Multi-sport
+633,200951504,Undetermined/unknown
+634,220837205,Hit with various obj
+635,220410571,"Falls, trips, etc."
+636,200146865,"Falls, trips, etc."
+637,200350005,"Falls, trips, etc."
+638,210632695,cardio/sync
+639,220134369,cardio/sync
+640,220500232,Multi-sport
+641,210343076,"Falls, trips, etc."
+642,220259924,"Falls, trips, etc."
+643,210512219,"Falls, trips, etc."
+644,220959973,"Falls, trips, etc."
+645,220827145,cardio/sync
+646,200732612,"Falls, trips, etc."
+647,220302440,"Falls, trips, etc."
+648,220602572,"Falls, trips, etc."
+649,200228769,Other mechanism
+650,201125465,Other mechanism
+651,201117927,Other mechanism
+652,221169070,Undetermined/unknown
+653,200306487,"Falls, trips, etc."
+654,220648288,Hit with various obj
+655,220576600,"Falls, trips, etc."
+656,221131917,"Falls, trips, etc."
+657,220408772,"Falls, trips, etc."
+658,210634063,"Falls, trips, etc."
+659,220661819,Heat stroke
+660,210439341,"Falls, trips, etc."
+661,200232958,"Falls, trips, etc."
+662,220310673,Other mechanism
+663,200413611,Hit with various obj
+664,210126048,Other mechanism
+665,220460557,"Falls, trips, etc."
+666,210415635,"Falls, trips, etc."
+667,211116264,"Falls, trips, etc."
+668,200923426,Undetermined/unknown
+669,200308077,"Falls, trips, etc."
+670,201233385,Other mechanism
+671,220242647,Hit with various obj
+672,200917201,"Falls, trips, etc."
+673,220254028,Heat stroke
+674,220420910,"Falls, trips, etc."
+675,220839228,cardio/sync
+676,200234097,"Falls, trips, etc."
+677,210143250,"Falls, trips, etc."
+678,220733050,Other mechanism
+679,200132377,Other mechanism
+680,220714654,"Falls, trips, etc."
+681,200336115,"Falls, trips, etc."
+682,220636132,"Falls, trips, etc."
+683,210661966,"Falls, trips, etc."
+684,211212233,"Falls, trips, etc."
+685,210764425,"Falls, trips, etc."
+686,220456315,"Falls, trips, etc."
+687,220746798,Hit with various obj
+688,210148156,"Falls, trips, etc."
+689,201001385,Other mechanism
+690,210512201,"Falls, trips, etc."
+691,230115121,"Falls, trips, etc."
+692,200302204,"Falls, trips, etc."
+693,200637565,Hit with various obj
+694,220737318,Undetermined/unknown
+695,210244496,"Falls, trips, etc."
+696,220109979,Other mechanism
+697,210723446,"Falls, trips, etc."
+698,200424364,Other mechanism
+699,220318962,"Falls, trips, etc."
+700,201119644,Undetermined/unknown
+701,200341104,"Falls, trips, etc."
+702,220142291,"Falls, trips, etc."
+703,210300822,Other mechanism
+704,210908720,"Falls, trips, etc."
+705,210457285,"Falls, trips, etc."
+706,220872485,Other mechanism
+707,210946858,Undetermined/unknown
+708,200624291,Hit with various obj
+709,220256377,"Falls, trips, etc."
+710,210205089,"Falls, trips, etc."
+711,220432892,Other mechanism
+712,221213926,"Falls, trips, etc."
+713,230146989,"Falls, trips, etc."
+714,200947587,"Falls, trips, etc."
+715,211248409,"Falls, trips, etc."
+716,220112547,"Falls, trips, etc."
+717,201215309,"Falls, trips, etc."
+718,211122275,"Falls, trips, etc."
+719,210416745,Other mechanism
+720,210321247,Other mechanism
+721,220222166,Other mechanism
+722,201207054,Other mechanism
+723,210744041,"Falls, trips, etc."
+724,210803849,"Falls, trips, etc."
+725,211100264,"Falls, trips, etc."
+726,220325752,cardio/sync
+727,210633614,"Falls, trips, etc."
+728,210113894,"Falls, trips, etc."
+729,210110266,Other mechanism
+730,210148979,"Falls, trips, etc."
+731,230123585,"Falls, trips, etc."
+732,210237040,Undetermined/unknown
+733,210220757,Hit with various obj
+734,220560828,Hit with various obj
+735,211203793,"Falls, trips, etc."
+736,210415581,"Falls, trips, etc."
+737,230124662,Other mechanism
+738,221057028,Other mechanism
+739,201140495,cardio/sync
+740,210205902,"Falls, trips, etc."
+741,220134439,Other mechanism
+742,220916744,Other mechanism
+743,200522087,"Falls, trips, etc."
+744,200218643,Other mechanism
+745,210302961,"Falls, trips, etc."
+746,220810635,"Falls, trips, etc."
+747,221015939,"Falls, trips, etc."
+748,211128551,"Falls, trips, etc."
+749,200329207,Multi-sport
+750,201022803,"Falls, trips, etc."
+751,210319731,Hit with various obj
+752,200915580,"Falls, trips, etc."
+753,200151466,Hit with various obj
+754,211255518,Undetermined/unknown
+755,221157357,"Falls, trips, etc."
+756,210524818,Undetermined/unknown
+757,220330251,Other mechanism
+758,210728675,"Falls, trips, etc."
+759,200502019,"Falls, trips, etc."
+760,210805734,"Falls, trips, etc."
+761,201053800,"Falls, trips, etc."
+762,210450508,Other mechanism
+763,200149714,Undetermined/unknown
+764,210814274,Undetermined/unknown
+765,220934106,"Falls, trips, etc."
+766,210137921,Other mechanism
+767,211122024,"Falls, trips, etc."
+768,220835058,"Falls, trips, etc."
+769,220158268,"Falls, trips, etc."
+770,200905737,"Falls, trips, etc."
+771,210434164,Hit with various obj
+772,200235209,"Falls, trips, etc."
+773,201251091,Other mechanism
+774,201231810,"Falls, trips, etc."
+775,211057675,"Falls, trips, etc."
+776,211207225,Undetermined/unknown
+777,210648735,"Falls, trips, etc."
+778,210216955,cardio/sync
+779,220260002,"Falls, trips, etc."
+780,221051763,"Falls, trips, etc."
+781,200614118,Other mechanism
+782,220762120,cardio/sync
+783,221109263,"Falls, trips, etc."
+784,220424679,Other mechanism
+785,210713229,"Falls, trips, etc."
+786,211170294,cardio/sync
+787,211141157,Other mechanism
+788,210353145,"Falls, trips, etc."
+789,210722174,"Falls, trips, etc."
+790,221148050,Other mechanism
+791,201010825,Other mechanism
+792,220207433,"Falls, trips, etc."
+793,220744133,"Falls, trips, etc."
+794,220353923,"Falls, trips, etc."
+795,220518955,"Falls, trips, etc."
+796,210335933,"Falls, trips, etc."
+797,211168100,Undetermined/unknown
+798,211261924,Other mechanism
+799,210345510,"Falls, trips, etc."
+800,210416867,Other mechanism
+801,220818527,Other mechanism
+802,210457865,Other mechanism
+803,220743944,"Falls, trips, etc."
+804,220870424,"Falls, trips, etc."
+805,221170229,"Falls, trips, etc."
+806,200324084,"Falls, trips, etc."
+807,221201377,"Falls, trips, etc."
+808,210530021,cardio/sync
+809,220516164,"Falls, trips, etc."
+810,210800390,Other mechanism
+811,200708857,"Falls, trips, etc."
+812,220836680,Undetermined/unknown
+813,200228804,cardio/sync
+814,211135075,"Falls, trips, etc."
+815,200326002,"Falls, trips, etc."
+816,220801230,"Falls, trips, etc."
+817,230215914,"Falls, trips, etc."
+818,220200030,Undetermined/unknown
+819,220661411,Undetermined/unknown
+820,221211771,"Falls, trips, etc."
+821,220247095,"Falls, trips, etc."
+822,201226340,"Falls, trips, etc."
+823,200246182,"Falls, trips, etc."
+824,200823218,"Falls, trips, etc."
+825,221215563,"Falls, trips, etc."
+826,220906867,"Falls, trips, etc."
+827,200255468,Other mechanism
+828,220557107,"Falls, trips, etc."
+829,210137991,"Falls, trips, etc."
+830,211208095,Undetermined/unknown
+831,220222678,"Falls, trips, etc."
+832,211161109,"Falls, trips, etc."
+833,211142416,"Falls, trips, etc."
+834,211104008,"Falls, trips, etc."
+835,210345339,"Falls, trips, etc."
+836,210849983,"Falls, trips, etc."
+837,210348121,Other mechanism
+838,210346693,"Falls, trips, etc."
+839,210744847,Other mechanism
+840,211145376,"Falls, trips, etc."
+841,210833089,"Falls, trips, etc."
+842,220301144,"Falls, trips, etc."
+843,220352553,"Falls, trips, etc."
+844,210507348,Other mechanism
+845,200606011,cardio/sync
+846,220155072,"Falls, trips, etc."
+847,221109890,Hit with various obj
+848,220254368,"Falls, trips, etc."
+849,211170798,Other mechanism
+850,220429315,"Falls, trips, etc."
+851,210549319,"Falls, trips, etc."
+852,220127812,Other mechanism
+853,221223445,"Falls, trips, etc."
+854,211158235,"Falls, trips, etc."
+855,200330826,"Falls, trips, etc."
+856,220209992,"Falls, trips, etc."
+857,220701205,Other mechanism
+858,200211523,"Falls, trips, etc."
+859,220416225,cardio/sync
+860,220330316,Other mechanism
+861,200954309,"Falls, trips, etc."
+862,200522242,Undetermined/unknown
+863,211135608,Other mechanism
+864,220867833,"Falls, trips, etc."
+865,220222487,Other mechanism
+866,210234312,"Falls, trips, etc."
+867,210147446,"Falls, trips, etc."
+868,211245881,Undetermined/unknown
+869,200235276,"Falls, trips, etc."
+870,221101922,"Falls, trips, etc."
+871,200954125,Other mechanism
+872,211004183,cardio/sync
+873,211052987,"Falls, trips, etc."
+874,201140374,Other mechanism
+875,200654763,"Falls, trips, etc."
+876,200204419,Other mechanism
+877,210717097,"Falls, trips, etc."
+878,210337300,Other mechanism
+879,210328407,"Falls, trips, etc."
+880,200129029,"Falls, trips, etc."
+881,201111839,Other mechanism
+882,220361733,"Falls, trips, etc."
+883,201121569,"Falls, trips, etc."
+884,210241260,"Falls, trips, etc."
+885,221068885,Undetermined/unknown
+886,230120430,"Falls, trips, etc."
+887,220737597,"Falls, trips, etc."
+888,200508620,"Falls, trips, etc."
+889,220361730,Other mechanism
+890,220627672,"Falls, trips, etc."
+891,210500041,Other mechanism
+892,211219236,Other mechanism
+893,220256125,Other mechanism
+894,211205623,"Falls, trips, etc."
+895,220402009,cardio/sync
+896,220855865,Undetermined/unknown
+897,201218638,"Falls, trips, etc."
+898,220568374,Hit with various obj
+899,210435695,"Falls, trips, etc."
+900,220121585,"Falls, trips, etc."
+901,200944986,"Falls, trips, etc."
+902,220215397,"Falls, trips, etc."
+903,220355201,"Falls, trips, etc."
+904,220632020,Other mechanism
+905,210625414,Undetermined/unknown
+906,220540103,cardio/sync
+907,220914599,"Falls, trips, etc."
+908,210544258,"Falls, trips, etc."
+909,211145103,"Falls, trips, etc."
+910,211047737,"Falls, trips, etc."
+911,220802725,"Falls, trips, etc."
+912,220963224,"Falls, trips, etc."
+913,210451322,"Falls, trips, etc."
+914,210727339,"Falls, trips, etc."
+915,220540821,"Falls, trips, etc."
+916,220318807,Other mechanism
+917,210220637,"Falls, trips, etc."
+918,210138930,"Falls, trips, etc."
+919,210331165,Undetermined/unknown
+920,210657399,"Falls, trips, etc."
+921,220668629,"Falls, trips, etc."
+922,200325952,Other mechanism
+923,220540640,Other mechanism
+924,201041553,"Falls, trips, etc."
+925,210440593,"Falls, trips, etc."
+926,220622712,"Falls, trips, etc."
+927,210735993,Undetermined/unknown
+928,200218657,cardio/sync
+929,220226990,"Falls, trips, etc."
+930,221146202,Undetermined/unknown
+931,210134018,"Falls, trips, etc."
+932,211162036,"Falls, trips, etc."
+933,200252890,Other mechanism
+934,221039602,Undetermined/unknown
+935,220709598,Undetermined/unknown
+936,220349852,Other mechanism
+937,211216406,"Falls, trips, etc."
+938,210342917,"Falls, trips, etc."
+939,210426232,"Falls, trips, etc."
+940,210336285,"Falls, trips, etc."
+941,201228533,"Falls, trips, etc."
+942,210128280,"Falls, trips, etc."
+943,220920495,"Falls, trips, etc."
+944,200339647,Other mechanism
+945,220120883,"Falls, trips, etc."
+946,210935477,"Falls, trips, etc."
+947,220903606,Hit with various obj
+948,210859243,Other mechanism
+949,210735397,Undetermined/unknown
+950,221146364,"Falls, trips, etc."
+951,210306929,"Falls, trips, etc."
+952,201106865,Undetermined/unknown
+953,211148274,"Falls, trips, etc."
+954,220400427,Undetermined/unknown
+955,221148250,"Falls, trips, etc."
+956,211212333,"Falls, trips, etc."
+957,220422454,"Falls, trips, etc."
+958,210706666,"Falls, trips, etc."
+959,220210000,Other mechanism
+960,200729308,"Falls, trips, etc."
+961,221208058,cardio/sync
+962,200233244,"Falls, trips, etc."
+963,200727755,cardio/sync
+964,220913535,Multi-sport
+965,210128277,"Falls, trips, etc."
+966,211212087,"Falls, trips, etc."
+967,220539308,Undetermined/unknown
+968,211026871,Undetermined/unknown
+969,210953578,"Falls, trips, etc."
+970,220940138,Multi-sport
+971,210202753,"Falls, trips, etc."
+972,211155722,"Falls, trips, etc."
+973,200342612,Other mechanism
+974,230103733,"Falls, trips, etc."
+975,200724258,Other mechanism
+976,220355047,Other mechanism
+977,220863107,Other mechanism
+978,220151036,Other mechanism
+979,200121240,Other mechanism
+980,200347887,"Falls, trips, etc."
+981,200955791,"Falls, trips, etc."
+982,220251790,"Falls, trips, etc."
+983,200642465,"Falls, trips, etc."
+984,211103963,"Falls, trips, etc."
+985,210810729,"Falls, trips, etc."
+986,200649326,Undetermined/unknown
+987,220840507,Other mechanism
+988,220728374,cardio/sync

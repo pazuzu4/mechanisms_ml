@@ -20,7 +20,7 @@ Read in data
 to_comb_cardio_syn = c("Cardiovascular event", "Other syncope or dyspnea")
 to_comb_hit_obj = c("Hit object","Hit player","Hit with ball","Hit with racquet/paddle")
 
-neiss_df_fct_d = read_rds("../clean_data/clean_full.RDS")
+neiss_df_fct_d = read_rds("../../clean_data/clean_full.RDS")
 ```
 
 
@@ -191,21 +191,21 @@ narrative_tbl = select(model_df_raw, cpsc_case_number, narrative ) |>
 
 ```{r}
 narrative_tbl |>
-  write_csv("../data_to_model/narrative_tbl_all.csv")
+  write_csv("../../data_to_model/narrative_tbl_all.csv")
 ```
 
 
 Export clean data for modeling
 ```{r}
-model_df_final_detect |> write_csv("../data_to_model/model_df_final_detect.csv")
-model_df_final_count |> write_csv("../data_to_model/model_df_final_count.csv")
-new_data_to_model_detect |> write_csv("../data_to_model/new_data_to_model_detect.csv")
-new_data_to_model_count |> write_csv("../data_to_model/new_data_to_model_count.csv")
+model_df_final_detect |> write_csv("../../data_to_model/model_df_final_detect.csv")
+model_df_final_count |> write_csv("../../data_to_model/model_df_final_count.csv")
+new_data_to_model_detect |> write_csv("../../data_to_model/new_data_to_model_detect.csv")
+new_data_to_model_count |> write_csv("../../data_to_model/new_data_to_model_count.csv")
 
-model_df_final_detect |> write_rds("../data_to_model/model_df_final_detect.rds")
-model_df_final_count |> write_rds("../data_to_model/model_df_final_count.rds")
-new_data_to_model_detect |> write_rds("../data_to_model/new_data_to_model_detect.rds")
-new_data_to_model_count |> write_rds("../data_to_model/new_data_to_model_count.rds")
+model_df_final_detect |> write_rds("../../data_to_model/model_df_final_detect.rds")
+model_df_final_count |> write_rds("../../data_to_model/model_df_final_count.rds")
+new_data_to_model_detect |> write_rds("../../data_to_model/new_data_to_model_detect.rds")
+new_data_to_model_count |> write_rds("../../data_to_model/new_data_to_model_count.rds")
 
 ```
 
@@ -223,7 +223,7 @@ Export full and narrative data for Keras text preprocessing
 
 model_df_raw |>  #mutate(primary_mechanism = as.numeric(primary_mechanism)) |> 
   select(cpsc_case_number, narrative, primary_mechanism) |>
-  write_csv("../data_to_model/keras_data/model_df_full_narrative.csv")
+  write_csv("../../data_to_model/keras_data/model_df_full_narrative.csv")
 
 # new_df_prepro |> 
 #     select(cpsc_case_number, narrative) |>
@@ -268,15 +268,15 @@ test_df_count_bin <- testing(init_split_bin)
 
 
 ```{r}
-train_df_count |> write_csv("../data_to_model/Train and Test Sets/train_df_count.csv")
-test_df_count |> write_csv("../data_to_model/Train and Test Sets/test_df_count.csv")
+train_df_count |> write_csv("../../data_to_model/Train and Test Sets/train_df_count.csv")
+test_df_count |> write_csv("../../data_to_model/Train and Test Sets/test_df_count.csv")
 
-train_df_detect |> write_csv("../data_to_model/Train and Test Sets/train_df_detect.csv")
-test_df_detect |> write_csv("../data_to_model/Train and Test Sets/test_df_detect.csv")
+train_df_detect |> write_csv("../../data_to_model/Train and Test Sets/train_df_detect.csv")
+test_df_detect |> write_csv("../../data_to_model/Train and Test Sets/test_df_detect.csv")
 
 
-train_df_count_bin |> write_csv("../data_to_model/Train and Test Sets/train_df_count_bin.csv")
-test_df_count_bin |> write_csv("../data_to_model/Train and Test Sets/test_df_count_bin.csv")
+train_df_count_bin |> write_csv("../../data_to_model/Train and Test Sets/train_df_count_bin.csv")
+test_df_count_bin |> write_csv("../../data_to_model/Train and Test Sets/test_df_count_bin.csv")
 
 ```
 
