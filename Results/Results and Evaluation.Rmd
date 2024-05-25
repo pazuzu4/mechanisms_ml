@@ -80,8 +80,17 @@ confusionMatrix(factor(bin_test_df_aug$keras_bin_pred), factor(bin_test_df_aug$p
 ```
 
 
+```{r}
 
+narrative_tbl = read_csv("../data_to_model/narrative_tbl_all.csv")
 
+test_df_count_aug |>
+  filter(wt_test_tree_preds != keras_multi_pred ) |>
+  left_join(narrative_tbl) |>
+  select(cpsc_case_number, treatment_date,age, sex,body_part,diagnosis, narrative, primary_mechanism, contains("pred"), everything()) |>
+  write_csv("../test_set_with_preds.csv")
+  
+```
 
 ```{r}
 #lin_mod_count = read_rds("../Model Objects/lin_mod_count.RDS")
