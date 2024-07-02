@@ -96,13 +96,15 @@ tennis_model_df <- neiss_df_fct_d |>
   filter(id == "tennis" & disposition != "FATALITY INCL. DOA, DIED IN ER") 
 
 
-consolidated_model_df = pb_model_df |> 
+consolidated_model_df_raw = pb_model_df |> 
   bind_rows(tennis_model_df) |> 
   mutate(
     primary_mechanism = ifelse(primary_mechanism %in% to_comb_cardio_syn, "cardio/sync", primary_mechanism)
     ,primary_mechanism = ifelse(primary_mechanism %in% to_comb_hit_obj, "Hit with various obj", primary_mechanism)
          , primary_mechanism = factor(primary_mechanism)     
-         )  |>
+         )  
+
+consolidated_model_df = consolidated_model_df_raw |>
   select(cpsc_case_number, psu , stratum , weight , treatment_date
          ,primary_mechanism
          ,age, sex ,body_part, diagnosis
@@ -126,6 +128,18 @@ consolidated_model_df = pb_model_df |>
 #consolidated_model_df |> count(other_diagnosis, sort = T) |> View()
 ```
 
+```{r}
+# consolidated_model_df_raw
+# consolidated_model_df
+# 
+# consolidated_model_df_raw |>
+#   select( -all_of(names(consolidated_model_df)[-1] ) )
+
+consolidated_model_df_raw |> 
+  select(1, Sport = id, disposition,location, body_region, disposition_group, location_group )  |>
+  write_csv("../../clean_data/extra_model_info.csv")
+
+```
 
 Get new data, using the same filters used to get the original data
 ```{r}

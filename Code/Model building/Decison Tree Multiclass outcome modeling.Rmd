@@ -25,7 +25,7 @@ new_df_count = read_csv("../../data_to_model/new_data_to_model_count.csv")
 
 ```{r}
 cols_not_mod = c("cpsc_case_number","psu","stratum","weight","treatment_date")
-trctrl <- trainControl(method = "cv", number = 10, verboseIter = F)
+trctrl <- trainControl(method = "cv", number = 7, verboseIter = F)
 #select(train_df_detect, -all_of(cols_not_mod) )
 #select(train_df_count, -all_of(cols_not_mod) )
 ```
@@ -36,31 +36,69 @@ Train the models unweighted
 #lin_mod_detect <- train(primary_mechanism~., data = select(train_df_detect, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl)
 lin_mod_count <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl)
 
+# dart_mod_count <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "xgbDART", trControl = trctrl)
+
+# ada_mod_count <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "cforest", trControl = trctrl)
+
+```
+
+```{r}
+#ada_mod_count
 ```
 
 
 Accounting for survey weights
 ```{r}
 # lin_mod_detect_wt <- train(primary_mechanism~., data = select(train_df_detect, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl, weights = train_df_detect$weight)
-lin_mod_count_wt <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl, weights = train_df_count$weight)
+#lin_mod_count_wt <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "xgbLinear", trControl = trctrl, weights = train_df_count$weight)
+tgrid = data.frame(mtry = c(20,23,27,30,35))
 
+rf_mod_count_wt <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "rf", trControl = trctrl, weights = train_df_count$weight, tuneGrid = tgrid)
+#rf_mod_count_unwt <- train(primary_mechanism~., data = select(train_df_count, -all_of(cols_not_mod) ), method = "rf", trControl = trctrl, tuneGrid = tgrid)
+```
+
+```{r}
+#rf_mod_count_unwt
+```
+
+```{r}
+#rf_mod_count_wt
 ```
 
 
+```{r}
+#plot(rf_mod_count_unwt)
+#plot(rf_mod_count_wt)
+```
+
 
 ```{r}
+options(scipen = 999999)
 test_tree_preds = predict(lin_mod_count,test_df_count)
 new_tree_preds = predict(lin_mod_count,new_df_count)
 
-wt_test_tree_preds = predict(lin_mod_count_wt,test_df_count)
-wt_new_tree_preds = predict(lin_mod_count_wt,new_df_count)
+wt_test_rf_preds = predict(rf_mod_count_wt,test_df_count)
+wt_new_rf_preds = predict(rf_mod_count_wt,new_df_count)
+
+tree_preds_probs = predict(lin_mod_count,test_df_count, type = "prob")
+#wt_new_tree_preds = predict(rf_mod_count_wt,new_df_count)
+
+tree_preds_probs[, "max_prob"] <- apply(tree_preds_probs, 1, max)
 
 test_df_count$test_tree_preds = test_tree_preds
-test_df_count$wt_test_tree_preds = wt_test_tree_preds
+test_df_count$wt_test_rf_preds = wt_test_rf_preds
 
 new_df_count$new_tree_preds = new_tree_preds
-new_df_count$wt_new_tree_preds = wt_new_tree_preds
+new_df_count$wt_new_rf_preds = wt_new_rf_preds
 
+test_df_count$tree_pred_correct = test_df_count$test_tree_preds == test_df_count$primary_mechanism
+test_df_count$rf_pred_correct = test_df_count$wt_test_rf_preds == test_df_count$primary_mechanism
+
+
+test_df_count_tableau_final = test_df_count |> bind_cols(tree_preds_probs)
+test_df_count_tableau_final
+# table(test_df_count$test_tree_preds)
+# table(test_df_count$tree_pred_correct)
 # summary(test_tree_preds)
 # summary(new_tree_preds)
 # 
@@ -68,9 +106,6 @@ new_df_count$wt_new_tree_preds = wt_new_tree_preds
 # summary(wt_new_tree_preds)
 
 
-```
-
-```{r}
 
 ```
 
@@ -81,7 +116,7 @@ Saving models to RDS files
 # lin_mod_detect_wt |> write_rds("../Model Objects/lin_mod_detect_wt.RDS")
  
 lin_mod_count |> write_rds("../../Model Objects/lin_mod_count.RDS")
-lin_mod_count_wt |> write_rds("../../Model Objects/lin_mod_count_wt.RDS")
+rf_mod_count_wt |> write_rds("../../Model Objects/rf_mod_count_wt.RDS")
 
 
 test_df_count |>  select(1, contains("preds")) |> write_csv("../../Results/Prediction Data/tree_multiclass_test_out.csv")
@@ -89,7 +124,30 @@ new_df_count |> select(1, contains("preds")) |> write_csv("../../Results/Predict
 
 
 
+
+narrative = read_csv("../../data_to_model/narrative_tbl_all.csv")
+o_cols = read_csv("../../clean_data/extra_model_info.csv")
+
+test_df_count_tableau_final |> left_join(narrative) |> left_join(o_cols) |>
+  write_csv( "../../Results/Tableau Data/Tableau_data_cleanv2.csv")
+
+
+
 # lin_mod_count_bin |> write_rds("../Model Objects/lin_mod_count_bin.RDS")
 # lin_mod_count_bin_wt |> write_rds("../Model Objects/lin_mod_count_bin_wt.RDS")
 
 ```
+
+```{r}
+# tmp = confusionMatrix(factor(as.character(test_tree_preds)), factor(as.character(test_df_count$primary_mechanism)))
+# 
+# 
+# tmp$byClass |> as.data.frame() |>
+#   rownames_to_column(var = "Primary Mechanism") |>
+#   mutate(str_remove_all("Class: ") )
+# 
+# test_df_count |>
+  
+
+```
+

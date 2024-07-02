@@ -1,4 +1,4 @@
-cpsc_case_number,new_tree_preds,wt_new_tree_preds
+cpsc_case_number,new_tree_preds,wt_new_rf_preds
 200116261,Other mechanism,Other mechanism
 200120874,"Falls, trips, etc.","Falls, trips, etc."
 200129029,"Falls, trips, etc.","Falls, trips, etc."
@@ -13,7 +13,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 200202631,Other mechanism,Other mechanism
 200202823,"Falls, trips, etc.","Falls, trips, etc."
 200203996,Undetermined/unknown,Undetermined/unknown
-200208464,Undetermined/unknown,Undetermined/unknown
+200208464,Undetermined/unknown,cardio/sync
 200339647,Other mechanism,Other mechanism
 200206948,Other mechanism,Other mechanism
 200207014,cardio/sync,Other mechanism
@@ -48,7 +48,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 200517027,"Falls, trips, etc.","Falls, trips, etc."
 200522087,"Falls, trips, etc.","Falls, trips, etc."
 200522338,"Falls, trips, etc.","Falls, trips, etc."
-200523495,"Falls, trips, etc.","Falls, trips, etc."
+200523495,"Falls, trips, etc.",cardio/sync
 200537827,"Falls, trips, etc.","Falls, trips, etc."
 200542519,"Falls, trips, etc.","Falls, trips, etc."
 200600450,Other mechanism,Other mechanism
@@ -56,11 +56,11 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 200606011,cardio/sync,cardio/sync
 200627557,Heat stroke,Heat stroke
 200614118,Other mechanism,Other mechanism
-200624390,"Falls, trips, etc.",Multi-sport
+200624390,"Falls, trips, etc.","Falls, trips, etc."
 200628664,cardio/sync,cardio/sync
 200642465,"Falls, trips, etc.","Falls, trips, etc."
 200649326,Undetermined/unknown,Undetermined/unknown
-200651198,Hit with various obj,Hit with various obj
+200651198,Hit with various obj,"Falls, trips, etc."
 200652919,Other mechanism,Other mechanism
 200654763,"Falls, trips, etc.","Falls, trips, etc."
 200723331,Other mechanism,Other mechanism
@@ -82,7 +82,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 200914573,Other mechanism,Other mechanism
 200915632,"Falls, trips, etc.","Falls, trips, etc."
 200917201,"Falls, trips, etc.","Falls, trips, etc."
-200925569,"Falls, trips, etc.",Undetermined/unknown
+200925569,"Falls, trips, etc.","Falls, trips, etc."
 200944872,"Falls, trips, etc.","Falls, trips, etc."
 200947587,"Falls, trips, etc.","Falls, trips, etc."
 200951504,Undetermined/unknown,Undetermined/unknown
@@ -129,7 +129,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 210216955,cardio/sync,cardio/sync
 210219121,Other mechanism,Other mechanism
 210219223,"Falls, trips, etc.","Falls, trips, etc."
-210220637,"Falls, trips, etc.",cardio/sync
+210220637,"Falls, trips, etc.","Falls, trips, etc."
 210220639,Undetermined/unknown,Undetermined/unknown
 210220757,Hit with various obj,Hit with various obj
 210225968,Other mechanism,Other mechanism
@@ -158,10 +158,10 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 210410294,"Falls, trips, etc.","Falls, trips, etc."
 210412328,"Falls, trips, etc.","Falls, trips, etc."
 210416104,"Falls, trips, etc.","Falls, trips, etc."
-210419893,cardio/sync,"Falls, trips, etc."
+210419893,cardio/sync,cardio/sync
 210426232,"Falls, trips, etc.","Falls, trips, etc."
 210433228,"Falls, trips, etc.","Falls, trips, etc."
-210435573,Undetermined/unknown,Undetermined/unknown
+210435573,Undetermined/unknown,Other mechanism
 210447034,Other mechanism,Other mechanism
 210448545,"Falls, trips, etc.","Falls, trips, etc."
 210451322,"Falls, trips, etc.","Falls, trips, etc."
@@ -202,7 +202,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 210814274,cardio/sync,cardio/sync
 210823856,"Falls, trips, etc.","Falls, trips, etc."
 210829300,"Falls, trips, etc.","Falls, trips, etc."
-210839134,cardio/sync,Undetermined/unknown
+210839134,cardio/sync,cardio/sync
 210849983,"Falls, trips, etc.","Falls, trips, etc."
 210855831,"Falls, trips, etc.","Falls, trips, etc."
 210902782,Other mechanism,Other mechanism
@@ -223,9 +223,9 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 211044293,Hit with various obj,Hit with various obj
 211057675,"Falls, trips, etc.","Falls, trips, etc."
 211103175,Multi-sport,Other mechanism
-211116264,Undetermined/unknown,Other mechanism
+211116264,Undetermined/unknown,Hit with various obj
 211122024,"Falls, trips, etc.","Falls, trips, etc."
-211136521,"Falls, trips, etc.",Multi-sport
+211136521,"Falls, trips, etc.",Hit with various obj
 211145376,"Falls, trips, etc.","Falls, trips, etc."
 211151181,Heat stroke,Heat stroke
 211161109,"Falls, trips, etc.","Falls, trips, etc."
@@ -246,7 +246,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220143931,"Falls, trips, etc.","Falls, trips, etc."
 220158268,"Falls, trips, etc.","Falls, trips, etc."
 220209842,Other mechanism,Other mechanism
-220209992,"Falls, trips, etc.",Other mechanism
+220209992,"Falls, trips, etc.","Falls, trips, etc."
 220222678,"Falls, trips, etc.","Falls, trips, etc."
 220226882,"Falls, trips, etc.","Falls, trips, etc."
 220226990,"Falls, trips, etc.","Falls, trips, etc."
@@ -270,7 +270,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220355165,Other mechanism,Other mechanism
 220369130,"Falls, trips, etc.","Falls, trips, etc."
 220421836,Hit with various obj,Hit with various obj
-220424679,Other mechanism,Heat stroke
+220424679,Other mechanism,Other mechanism
 220427094,cardio/sync,cardio/sync
 220428148,"Falls, trips, etc.","Falls, trips, etc."
 220452982,"Falls, trips, etc.","Falls, trips, etc."
@@ -291,7 +291,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220540094,Other mechanism,Other mechanism
 220540103,Undetermined/unknown,Undetermined/unknown
 220560828,"Falls, trips, etc.","Falls, trips, etc."
-220563596,Multi-sport,Multi-sport
+220563596,Multi-sport,Heat stroke
 220576600,"Falls, trips, etc.","Falls, trips, etc."
 220609028,Undetermined/unknown,Undetermined/unknown
 220622712,"Falls, trips, etc.","Falls, trips, etc."
@@ -308,7 +308,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220701205,Other mechanism,Other mechanism
 220712898,"Falls, trips, etc.","Falls, trips, etc."
 220714654,"Falls, trips, etc.","Falls, trips, etc."
-220718250,"Falls, trips, etc.",Hit with various obj
+220718250,"Falls, trips, etc.","Falls, trips, etc."
 220726194,"Falls, trips, etc.","Falls, trips, etc."
 220728353,"Falls, trips, etc.","Falls, trips, etc."
 220728374,cardio/sync,cardio/sync
@@ -319,7 +319,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220746798,Hit with various obj,Hit with various obj
 220762120,Heat stroke,Heat stroke
 220836680,Other mechanism,Other mechanism
-221039602,Undetermined/unknown,cardio/sync
+221039602,Undetermined/unknown,Undetermined/unknown
 221051180,"Falls, trips, etc.","Falls, trips, etc."
 221070021,Other mechanism,Other mechanism
 220835058,"Falls, trips, etc.","Falls, trips, etc."
@@ -339,7 +339,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220963961,Undetermined/unknown,Undetermined/unknown
 221002442,"Falls, trips, etc.","Falls, trips, etc."
 221054823,cardio/sync,cardio/sync
-221157775,Undetermined/unknown,Hit with various obj
+221157775,Undetermined/unknown,Undetermined/unknown
 221033273,Undetermined/unknown,Undetermined/unknown
 221064032,"Falls, trips, etc.","Falls, trips, etc."
 221068885,Undetermined/unknown,Undetermined/unknown
@@ -398,8 +398,8 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 200239953,Other mechanism,Other mechanism
 200239954,"Falls, trips, etc.","Falls, trips, etc."
 200241842,Other mechanism,Other mechanism
-200244078,Other mechanism,Multi-sport
-200246025,"Falls, trips, etc.",Multi-sport
+200244078,Other mechanism,Other mechanism
+200246025,"Falls, trips, etc.","Falls, trips, etc."
 200246164,"Falls, trips, etc.","Falls, trips, etc."
 200246182,"Falls, trips, etc.","Falls, trips, etc."
 200252890,Other mechanism,Other mechanism
@@ -412,7 +412,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 200312853,Other mechanism,Other mechanism
 200312985,"Falls, trips, etc.","Falls, trips, etc."
 200319970,"Falls, trips, etc.","Falls, trips, etc."
-200336115,"Falls, trips, etc.","Falls, trips, etc."
+200336115,"Falls, trips, etc.",Multi-sport
 200324084,"Falls, trips, etc.","Falls, trips, etc."
 200325917,"Falls, trips, etc.","Falls, trips, etc."
 200326002,"Falls, trips, etc.","Falls, trips, etc."
@@ -486,7 +486,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 201231810,"Falls, trips, etc.","Falls, trips, etc."
 201233385,Other mechanism,Other mechanism
 201237982,Other mechanism,Other mechanism
-201238711,"Falls, trips, etc.",Multi-sport
+201238711,"Falls, trips, etc.","Falls, trips, etc."
 201243242,Hit with various obj,Hit with various obj
 201251089,Other mechanism,Other mechanism
 201251091,Undetermined/unknown,Undetermined/unknown
@@ -529,7 +529,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 210246156,"Falls, trips, etc.","Falls, trips, etc."
 210300822,"Falls, trips, etc.","Falls, trips, etc."
 210303676,Other mechanism,Other mechanism
-210306929,Multi-sport,Other mechanism
+210306929,Multi-sport,"Falls, trips, etc."
 210319219,"Falls, trips, etc.","Falls, trips, etc."
 210321247,Other mechanism,Other mechanism
 210323348,"Falls, trips, etc.","Falls, trips, etc."
@@ -569,7 +569,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 210428702,"Falls, trips, etc.","Falls, trips, etc."
 210428714,Other mechanism,Other mechanism
 210434164,Undetermined/unknown,Undetermined/unknown
-210435695,Multi-sport,Multi-sport
+210435695,Multi-sport,"Falls, trips, etc."
 210436007,Multi-sport,Other mechanism
 210439341,"Falls, trips, etc.","Falls, trips, etc."
 210440593,"Falls, trips, etc.","Falls, trips, etc."
@@ -625,7 +625,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 210735397,Other mechanism,Other mechanism
 210744028,Other mechanism,Other mechanism
 210744041,"Falls, trips, etc.","Falls, trips, etc."
-210744847,Other mechanism,Other mechanism
+210744847,Other mechanism,"Falls, trips, etc."
 210760208,"Falls, trips, etc.","Falls, trips, etc."
 210763815,"Falls, trips, etc.","Falls, trips, etc."
 210803849,"Falls, trips, etc.","Falls, trips, etc."
@@ -711,7 +711,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 211216406,"Falls, trips, etc.","Falls, trips, etc."
 211216620,Undetermined/unknown,Undetermined/unknown
 211219198,Other mechanism,Other mechanism
-211219236,Multi-sport,Other mechanism
+211219236,Multi-sport,Multi-sport
 211227509,"Falls, trips, etc.","Falls, trips, etc."
 211228314,"Falls, trips, etc.","Falls, trips, etc."
 211228921,Other mechanism,Other mechanism
@@ -774,16 +774,16 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220230235,Other mechanism,Other mechanism
 220230379,Other mechanism,Other mechanism
 220230663,Hit with various obj,Hit with various obj
-220251784,Other mechanism,Other mechanism
+220251784,Other mechanism,Undetermined/unknown
 220251790,"Falls, trips, etc.","Falls, trips, etc."
 220254368,"Falls, trips, etc.","Falls, trips, etc."
 220254443,Other mechanism,Other mechanism
-220256119,Other mechanism,Other mechanism
+220256119,Other mechanism,Hit with various obj
 220256125,Other mechanism,Other mechanism
 220256377,"Falls, trips, etc.","Falls, trips, etc."
 220259907,"Falls, trips, etc.","Falls, trips, etc."
 220259924,"Falls, trips, etc.","Falls, trips, etc."
-220260002,Hit with various obj,Undetermined/unknown
+220260002,Hit with various obj,Hit with various obj
 220301144,"Falls, trips, etc.","Falls, trips, etc."
 220302182,Other mechanism,Other mechanism
 220302228,"Falls, trips, etc.","Falls, trips, etc."
@@ -798,7 +798,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220361733,"Falls, trips, etc.","Falls, trips, etc."
 220361857,"Falls, trips, etc.","Falls, trips, etc."
 220451122,Other mechanism,Other mechanism
-220456315,"Falls, trips, etc.",Multi-sport
+220456315,"Falls, trips, etc.","Falls, trips, etc."
 221218354,Other mechanism,Other mechanism
 220313499,Hit with various obj,Hit with various obj
 220318962,"Falls, trips, etc.","Falls, trips, etc."
@@ -809,7 +809,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220346540,"Falls, trips, etc.","Falls, trips, etc."
 220347852,"Falls, trips, etc.","Falls, trips, etc."
 220349852,Other mechanism,Other mechanism
-220349914,"Falls, trips, etc.","Falls, trips, etc."
+220349914,"Falls, trips, etc.",Hit with various obj
 220350018,"Falls, trips, etc.","Falls, trips, etc."
 220352553,"Falls, trips, etc.","Falls, trips, etc."
 220355201,"Falls, trips, etc.","Falls, trips, etc."
@@ -839,7 +839,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220513118,Other mechanism,Other mechanism
 220518698,Hit with various obj,Hit with various obj
 220518955,"Falls, trips, etc.","Falls, trips, etc."
-220523134,Hit with various obj,Hit with various obj
+220523134,Hit with various obj,"Falls, trips, etc."
 220523296,Other mechanism,Other mechanism
 220523324,Other mechanism,Other mechanism
 220523368,"Falls, trips, etc.","Falls, trips, etc."
@@ -861,7 +861,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220612305,Undetermined/unknown,Undetermined/unknown
 220614247,Other mechanism,Other mechanism
 220631652,Other mechanism,Other mechanism
-220632020,Undetermined/unknown,Other mechanism
+220632020,Undetermined/unknown,Undetermined/unknown
 220640492,"Falls, trips, etc.","Falls, trips, etc."
 220643990,Other mechanism,Other mechanism
 220646109,"Falls, trips, etc.","Falls, trips, etc."
@@ -877,18 +877,18 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 220737597,"Falls, trips, etc.","Falls, trips, etc."
 220860434,Hit with various obj,Hit with various obj
 220942737,Hit with various obj,Hit with various obj
-220715921,"Falls, trips, etc.","Falls, trips, etc."
+220715921,"Falls, trips, etc.",Hit with various obj
 220728462,"Falls, trips, etc.","Falls, trips, etc."
 220737318,Other mechanism,Other mechanism
 220743944,"Falls, trips, etc.","Falls, trips, etc."
 220744133,"Falls, trips, etc.","Falls, trips, etc."
-220748912,"Falls, trips, etc.",Hit with various obj
+220748912,"Falls, trips, etc.","Falls, trips, etc."
 220751476,"Falls, trips, etc.","Falls, trips, etc."
 220801230,"Falls, trips, etc.","Falls, trips, etc."
 220802725,Hit with various obj,Hit with various obj
 220802784,"Falls, trips, etc.","Falls, trips, etc."
 220802822,Other mechanism,Other mechanism
-220810635,Multi-sport,Multi-sport
+220810635,Multi-sport,"Falls, trips, etc."
 220812092,cardio/sync,cardio/sync
 220818527,Other mechanism,Other mechanism
 220836683,"Falls, trips, etc.","Falls, trips, etc."
@@ -927,7 +927,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 221061555,Other mechanism,Other mechanism
 221064378,"Falls, trips, etc.","Falls, trips, etc."
 221109263,"Falls, trips, etc.","Falls, trips, etc."
-220913535,Multi-sport,Multi-sport
+220913535,Multi-sport,"Falls, trips, etc."
 220924943,"Falls, trips, etc.","Falls, trips, etc."
 220934106,"Falls, trips, etc.","Falls, trips, etc."
 220940770,Other mechanism,Other mechanism
@@ -958,7 +958,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 221146202,Undetermined/unknown,Undetermined/unknown
 221146364,"Falls, trips, etc.","Falls, trips, etc."
 221157357,"Falls, trips, etc.","Falls, trips, etc."
-221157420,Hit with various obj,Hit with various obj
+221157420,Hit with various obj,"Falls, trips, etc."
 221158736,"Falls, trips, etc.","Falls, trips, etc."
 221161101,Hit with various obj,Hit with various obj
 221169070,Undetermined/unknown,Undetermined/unknown
@@ -967,7 +967,7 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 221213927,"Falls, trips, etc.","Falls, trips, etc."
 221226712,Other mechanism,Other mechanism
 221259352,"Falls, trips, etc.","Falls, trips, etc."
-221259430,Undetermined/unknown,cardio/sync
+221259430,Undetermined/unknown,Undetermined/unknown
 230144415,Hit with various obj,Hit with various obj
 221215563,"Falls, trips, etc.","Falls, trips, etc."
 221223445,"Falls, trips, etc.","Falls, trips, etc."
@@ -976,10 +976,10 @@ cpsc_case_number,new_tree_preds,wt_new_tree_preds
 221239911,"Falls, trips, etc.","Falls, trips, etc."
 221248229,Other mechanism,Other mechanism
 221252173,Other mechanism,Other mechanism
-221256137,Undetermined/unknown,Undetermined/unknown
+221256137,Undetermined/unknown,Hit with various obj
 221260866,Other mechanism,Other mechanism
 230104342,Other mechanism,Other mechanism
-230110008,Hit with various obj,Hit with various obj
+230110008,Hit with various obj,"Falls, trips, etc."
 230120430,"Falls, trips, etc.","Falls, trips, etc."
 230122408,cardio/sync,cardio/sync
 230124662,Other mechanism,Other mechanism
